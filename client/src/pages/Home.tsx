@@ -206,9 +206,6 @@ export default function Home() {
                 {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </Button>
             )}
-            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-              Conectar
-            </Button>
           </div>
         </div>
       </nav>
@@ -325,7 +322,7 @@ export default function Home() {
           <div className="mb-8 text-center">
             {/* Profile photo - bigger */}
             <div className="w-44 h-44 rounded-full border-2 border-secondary/40 overflow-hidden shadow-xl mx-auto mb-4">
-              <img src="/foto_informal_jersey_2.png" alt="Antonio Gutiérrez" className="w-full h-full object-cover" />
+              <img src="/foto_informal_jersey_2.jpg" alt="Antonio Gutiérrez" className="w-full h-full object-cover" />
             </div>
             <div className="label-sm text-secondary mb-2">PANEL DE CONTACTO · MX / LATAM</div>
             <h2 className="text-3xl md:text-4xl font-bold max-w-3xl mx-auto">
@@ -384,12 +381,12 @@ export default function Home() {
               <div className="label-sm text-secondary mb-3">ENFOQUE DE CONVERSACIÓN</div>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
-                  { icon: '📊', title: 'Merchant Acquiring', tag: 'LATAM', desc: 'Ciclos outbound, retención de portafolio y expansión B2B en verticales de alto volumen.' },
-                  { icon: '🔌', title: 'Integraciones API / ISV', tag: 'LATAM', desc: 'Partnerships técnicos con ERP, POS y plataformas de pagos en México y LATAM.' },
-                  { icon: '🤝', title: 'Alianzas Estratégicas & GTM', tag: 'LATAM', desc: 'Estructuración de alianzas comerciales, go-to-market y desarrollo de canales regionales.' },
-                  { icon: '⚡', title: 'Sales Ops & Automatización', tag: 'LATAM', desc: 'Diseño de flujos de prospección, CRM, reportería y herramientas SalesTech propias.' },
+                  { icon: '📊', title: 'Merchant Acquiring', tag: 'LATAM', desc: 'Ciclos outbound, retención de portafolio y expansión B2B en verticales de alto volumen.', targetId: 'experiencia-fiserv' },
+                  { icon: '🔌', title: 'Integraciones API / ISV', tag: 'LATAM', desc: 'Partnerships técnicos con ERP, POS y plataformas de pagos en México y LATAM.', targetId: 'experiencia-clip' },
+                  { icon: '🤝', title: 'Alianzas Estratégicas & GTM', tag: 'LATAM', desc: 'Estructuración de alianzas comerciales, go-to-market y desarrollo de canales regionales.', targetId: 'experiencia-clip' },
+                  { icon: '⚡', title: 'Sales Ops & Automatización', tag: 'LATAM', desc: 'Diseño de flujos de prospección, CRM, reportería y herramientas SalesTech propias.', targetId: 'proyectos' },
                 ].map((item, i) => (
-                  <div key={i} className="p-4 bg-card border border-border rounded-xl hover:border-secondary/50 transition-colors">
+                  <a key={i} href={`#${item.targetId}`} className="p-4 bg-card border border-border rounded-xl hover:border-secondary/50 transition-colors block text-left">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
                         <span className="text-lg">{item.icon}</span>
@@ -398,14 +395,15 @@ export default function Home() {
                       <span className="px-2 py-0.5 bg-secondary text-white text-[10px] font-bold rounded-full">{item.tag}</span>
                     </div>
                     <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-              <a href="mailto:antoniogtzjimenez@gmail.com"
+              <a href="https://wa.me/529981191903?text=Hola%20Antonio,%20vi%20tu%20portafolio%20interactivo%20y%20me%20gustar%C3%ADa%20conversar."
+                target="_blank" rel="noopener noreferrer"
                 className="flex-1 text-center px-6 py-3 bg-secondary text-white rounded-xl font-bold hover:bg-secondary/90 transition-colors">
                 Iniciar conversación
               </a>
@@ -431,7 +429,7 @@ export default function Home() {
           <div className="space-y-6 max-w-4xl">
 
             {/* ── FISERV ── */}
-            <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow scroll-reveal">
+            <div id="experiencia-fiserv" className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow scroll-reveal">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-6 pt-5 pb-3 border-b border-border/50">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center shadow shrink-0">
@@ -484,7 +482,7 @@ export default function Home() {
             </div>
 
             {/* ── CLIP ── */}
-            <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow scroll-reveal">
+            <div id="experiencia-clip" className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow scroll-reveal">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-6 pt-5 pb-3 border-b border-border/50">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center shadow shrink-0">
@@ -529,7 +527,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  {['/oddo+clip.jpg', '/odoo.png'].map((src, i) => (
+                  {['/oddo+clip.jpg', '/odoo.jpg'].map((src, i) => (
                     <div
                       key={i}
                       className="h-44 rounded-xl overflow-hidden border border-border/50 shadow-sm shrink-0 cursor-zoom-in group relative"
@@ -551,7 +549,7 @@ export default function Home() {
             </div>
 
             {/* ── JAPAN TOBACCO INTERNATIONAL ── */}
-            <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow scroll-reveal">
+            <div id="experiencia-jti" className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow scroll-reveal">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-6 pt-5 pb-3 border-b border-border/50">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center shadow shrink-0">
