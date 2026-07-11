@@ -5,6 +5,7 @@ import { POSTerminal } from '@/components/POSTerminal';
 import { CounterStat } from '@/components/CounterStat';
 import { ServiceCard } from '@/components/ServiceCard';
 import { ParallaxFintechElements } from '@/components/ParallaxFintechElements';
+import { AcquisitionDashboard } from '@/components/AcquisitionDashboard';
 import { useTheme } from '@/contexts/ThemeContext';
 import {
   CreditCard,
@@ -19,6 +20,7 @@ import {
   Sun,
   Moon,
   Building2,
+  MessageSquare,
 } from 'lucide-react';
 
 /**
@@ -34,6 +36,7 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<'estructura' | 'clevel' | 'sectores' | 'velocidad'>('estructura');
 
   // 1. Visitor count loading (up in production, get in dev/admin)
   useEffect(() => {
@@ -134,7 +137,7 @@ export default function Home() {
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
     // Observe main layout section elements
-    ['trayectoria', 'proyectos', 'certificaciones', 'contacto'].forEach(id => {
+    ['trayectoria', 'red-activa', 'proyectos', 'certificaciones', 'contacto'].forEach(id => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
@@ -186,6 +189,9 @@ export default function Home() {
             </a>
             <a href="#trayectoria" className="text-sm hover:text-secondary transition-colors">
               Trayectoria
+            </a>
+            <a href="#red-activa" className="text-sm hover:text-secondary transition-colors">
+              Red Activa
             </a>
             <a href="#proyectos" className="text-sm hover:text-secondary transition-colors">
               Proyectos
@@ -242,7 +248,7 @@ export default function Home() {
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-3 gap-6 mb-8" data-clarity-unmask="true">
               <div>
                 <div className="text-3xl font-bold text-gradient">5+</div>
                 <div className="text-xs text-muted-foreground label-sm">Años Fintech</div>
@@ -252,7 +258,7 @@ export default function Home() {
                 <div className="text-xs text-muted-foreground label-sm">MRR Generado</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gradient">500+</div>
+                <div className="text-3xl font-bold text-gradient">1,000+</div>
                 <div className="text-xs text-muted-foreground label-sm">Contactos del Sector</div>
               </div>
             </div>
@@ -540,6 +546,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+                <AcquisitionDashboard />
                 <div className="flex flex-wrap gap-2 pt-1 border-t border-border/40">
                   {['Salesforce', 'Apollo', 'Sales Navigator', 'API Integrations', 'ISV Partnerships'].map(t => (
                     <span key={t} className="px-3 py-1 bg-muted text-foreground/70 text-xs rounded-full font-medium border border-border/50">{t}</span>
@@ -674,6 +681,254 @@ export default function Home() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Red Activa Section */}
+      <section id="red-activa" className="relative py-16 bg-background border-t border-border/30 overflow-hidden" data-clarity-unmask="true">
+        {/* Parallax background elements */}
+        <div
+          className="absolute top-10 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none"
+          style={{ transform: `translate3d(0, ${scrollY * 0.05}px, 0)` }}
+        />
+        <div
+          className="absolute bottom-10 right-10 w-72 h-72 bg-secondary/5 rounded-full blur-3xl pointer-events-none"
+          style={{ transform: `translate3d(0, ${scrollY * -0.05}px, 0)` }}
+        />
+
+        <div className="container relative z-10">
+          <div className="mb-10 scroll-reveal">
+            <div className="label-sm text-secondary mb-2">CAPITAL DE RELACIONES (BYOD)</div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-2">
+              Red Activa de Contactos en LATAM
+            </h2>
+            <p className="text-sm text-muted-foreground max-w-2xl">
+              Mi portafolio de contactos no es una base de datos estática en frío. Es un ecosistema vivo de relaciones directas y canales de comunicación ya abiertos con tomadores de decisión clave.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-12 gap-8 items-center">
+            {/* Left: 3 Stats Cards */}
+            <div className="md:col-span-5 space-y-4">
+              <div className="bg-card border border-border rounded-2xl p-5 hover:border-secondary/50 transition-all duration-300 shadow-sm relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-[4px] h-full bg-blue-500" />
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 bg-blue-500/10 text-blue-400 rounded-lg">
+                    <Users className="w-5 h-5" />
+                  </div>
+                  <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase">Conexiones Directas</span>
+                </div>
+                <div className="text-3xl font-bold mb-1">3,115</div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Contactos de primer grado en LinkedIn. Acceso inmediato sin intermediarios ni filtros para campañas comerciales.
+                </p>
+              </div>
+
+              <div className="bg-card border border-border rounded-2xl p-5 hover:border-secondary/50 transition-all duration-300 shadow-sm relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-[4px] h-full bg-secondary" />
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 bg-secondary/15 text-secondary rounded-lg">
+                    <TrendingUp className="w-5 h-5" />
+                  </div>
+                  <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase">Tomadores de Decisión</span>
+                </div>
+                <div className="text-3xl font-bold mb-1">63% <span className="text-xs text-muted-foreground font-normal">({(1967).toLocaleString()} contactos)</span></div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  1,115 perfiles directivos C-Level (CEOs, CFOs, Fundadores) y 852 directores y gerentes de sector en la región.
+                </p>
+              </div>
+
+              <div className="bg-card border border-border rounded-2xl p-5 hover:border-secondary/50 transition-all duration-300 shadow-sm relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-[4px] h-full bg-emerald-500" />
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 bg-emerald-500/10 text-emerald-400 rounded-lg">
+                    <MessageSquare className="w-5 h-5" />
+                  </div>
+                  <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase">Chats Activos</span>
+                </div>
+                <div className="text-3xl font-bold mb-1">1,099 <span className="text-xs text-muted-foreground font-normal">(35% de la red)</span></div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Contactos con historial de mensajería bidireccional activa. Relaciones precalentadas listas para prospección.
+                </p>
+              </div>
+            </div>
+
+            {/* Right: Interactive Wallet Widget */}
+            <div className="md:col-span-7 bg-[#0f172a] rounded-2xl border border-slate-800 p-6 shadow-2xl flex flex-col justify-between h-[420px] text-slate-100">
+              <div className="flex justify-between items-center border-b border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse" />
+                  <span className="text-xs font-mono tracking-wider text-slate-400 font-semibold">SOVEREIGN SALES WALLET</span>
+                </div>
+                <span className="px-2 py-0.5 bg-secondary/20 text-secondary text-[10px] font-bold rounded">MAPA DE CALIDEZ</span>
+              </div>
+
+              {/* Tabs */}
+              <div className="flex gap-2 my-4">
+                {[
+                  { id: 'estructura', label: 'Estructura' },
+                  { id: 'clevel', label: 'Chats C-Level' },
+                  { id: 'sectores', label: 'Sectores Clave' },
+                  { id: 'velocidad', label: 'Velocidad' },
+                ].map(tab => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id as any)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      activeTab === tab.id
+                        ? 'bg-secondary text-white shadow-lg shadow-secondary/20'
+                        : 'bg-slate-900 border border-slate-800 text-slate-400 hover:text-slate-200'
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Visual screen */}
+              <div className="flex-grow flex flex-col justify-center gap-4">
+                {activeTab === 'estructura' && (
+                  <>
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold text-slate-300">
+                        <span>Acceso Directo (1er Grado)</span>
+                        <span>3,115</span>
+                      </div>
+                      <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-secondary to-accent transition-all duration-700" style={{ width: '100%' }} />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold text-slate-300">
+                        <span>Canal de Chat Activo</span>
+                        <span>1,099 (35%)</span>
+                      </div>
+                      <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-700" style={{ width: '35.2%' }} />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold text-slate-300">
+                        <span>Tomadores de Decisión</span>
+                        <span>1,967 (63%)</span>
+                      </div>
+                      <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-700" style={{ width: '63.1%' }} />
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {activeTab === 'clevel' && (
+                  <>
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold text-slate-300">
+                        <span>CEOs, CFOs y Fundadores en red</span>
+                        <span>1,115</span>
+                      </div>
+                      <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-secondary to-accent transition-all duration-700" style={{ width: '35.8%' }} />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold text-slate-300">
+                        <span>C-Level con Chat Activo</span>
+                        <span>426 (38%)</span>
+                      </div>
+                      <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-700" style={{ width: '38.2%' }} />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold text-slate-300">
+                        <span>Directores y Gerentes con Chat Activo</span>
+                        <span>272 (32%)</span>
+                      </div>
+                      <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-700" style={{ width: '31.9%' }} />
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {activeTab === 'sectores' && (
+                  <>
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold text-slate-300">
+                        <span>E-commerce & Retail B2B (Core Acquiring)</span>
+                        <span>99</span>
+                      </div>
+                      <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-secondary to-accent transition-all duration-700" style={{ width: '49.5%' }} />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold text-slate-300">
+                        <span>Fintech & Neobancos (Partnerships API)</span>
+                        <span>51</span>
+                      </div>
+                      <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-700" style={{ width: '25.5%' }} />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold text-slate-300">
+                        <span>Pasarelas de Pago & Adquirencia (PSP)</span>
+                        <span>26</span>
+                      </div>
+                      <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-700" style={{ width: '13%' }} />
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {activeTab === 'velocidad' && (
+                  <>
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold text-slate-300">
+                        <span>Velocidad de Crecimiento (2026)</span>
+                        <span>+60 contactos / mes</span>
+                      </div>
+                      <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-secondary to-accent transition-all duration-700" style={{ width: '100%' }} />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold text-slate-300">
+                        <span>Contactos Añadidos en 2026 (YTD)</span>
+                        <span>+380 nuevos</span>
+                      </div>
+                      <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-700" style={{ width: '85%' }} />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold text-slate-300">
+                        <span>Contactos Añadidos en 2025</span>
+                        <span>+403 nuevos</span>
+                      </div>
+                      <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-700" style={{ width: '90%' }} />
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+
+              <div className="text-[11px] text-slate-400 text-center border-t border-slate-800 pt-3">
+                💡 Velocidad de ataque: El contacto directo elimina el tiempo de espera por solicitudes de conexión en LinkedIn, acelerando los ciclos de cierre de cuentas clave (ABM).
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -981,6 +1236,7 @@ export default function Home() {
           <div className="container py-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-muted-foreground">
             <nav className="flex gap-6 font-semibold tracking-widest uppercase">
               <a href="#trayectoria" className="hover:text-foreground transition-colors">Trayectoria</a>
+              <a href="#red-activa" className="hover:text-foreground transition-colors">Red Activa</a>
               <a href="#proyectos" className="hover:text-foreground transition-colors">Proyectos</a>
               <a href="#contacto" className="hover:text-foreground transition-colors">Contacto</a>
             </nav>
