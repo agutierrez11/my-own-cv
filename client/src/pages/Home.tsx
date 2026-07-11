@@ -509,7 +509,7 @@ export default function Home() {
                 <p className="text-sm text-foreground/80">Ventas enterprise, integraciones API/ISV y desarrollo de partnerships comerciales.</p>
                 <div className="flex items-center gap-2 bg-secondary/8 border border-secondary/20 rounded-lg px-4 py-2.5 text-sm text-muted-foreground">
                   <Zap className="w-4 h-4 text-secondary shrink-0" />
-                  <span>$69M MXN TPV total · 75.3% volumen auto-generado (Outbound Hunter) · 2.8x valor promedio vs Inbound</span>
+                  <span>$69M MXN TPV total · 75.3% volumen auto-generado · Top Performer (Podio Nacional Clip, 109% cuota)</span>
                 </div>
                 <div className="flex gap-8 py-2">
                   <div><div className="text-2xl font-bold text-foreground">$69M</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">TPV Procesado</div></div>
@@ -521,7 +521,7 @@ export default function Home() {
                     { icon: '🎯', title: 'OUTBOUND HUNTER', desc: 'Cerró 15 tratos auto-generados que aportaron $52M MXN (75.3% del volumen total de la cartera de $69M MXN).' },
                     { icon: '🔌', title: 'API & ISV INTEGRATIONS', desc: 'Bistrosoft (restaurantes), Profitroom (hospitalidad), Odoo ERP' },
                     { icon: '⚡', title: 'TECH PROSPECTING', desc: 'Sales Navigator, Apollo, scraping workflows para calificación de decisores' },
-                    { icon: '📊', title: 'EFICIENCIA OUTBOUND', desc: 'Cuentas auto-generadas promediaron $3.46M MXN anuales, superando por 2.8x al promedio de inbound/expos ($1.2M MXN).' },
+                    { icon: '🏆', title: 'TOP PERFORMER & CUOTAS', desc: 'Reconocido en el podio nacional de Top Performers de Clip (3er lugar general) tras alcanzar el 109% de cumplimiento de cuota de TPV.' },
                   ].map((f, i) => (
                     <div key={i} className="flex gap-3 p-3 bg-muted/30 rounded-lg border border-border/30">
                       <span className="text-lg shrink-0">{f.icon}</span>
@@ -532,14 +532,14 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {['/oddo+clip.jpg', '/odoo.jpg'].map((src, i) => (
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {['/oddo+clip.jpg', '/odoo.jpg', '/podium_clip.png'].map((src, i) => (
                     <div
                       key={i}
                       className="h-44 rounded-xl overflow-hidden border border-border/50 shadow-sm shrink-0 cursor-zoom-in group relative"
                       onClick={() => setLightboxImg(src)}
                     >
-                      <img src={src} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt={`Clip foto ${i + 1}`} />
+                      <img src={src} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt={i === 2 ? 'Podio de Top Performers Clip (109% de cuota)' : `Clip foto ${i + 1}`} />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                         <span className="opacity-0 group-hover:opacity-100 text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded transition-opacity">Ver foto</span>
                       </div>
