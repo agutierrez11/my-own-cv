@@ -30,13 +30,19 @@ import {
  * - Elementos: Tarjetas fintech, terminales de pago, billeteras digitales
  */
 
+import { useLanguage } from '@/contexts/LanguageContext';
+
 export default function Home() {
   const { theme, toggleTheme } = useTheme();
+  const { language, setLanguage, t } = useLanguage();
   const [posStatus, setPosStatus] = useState<'idle' | 'processing' | 'success'>('idle');
   const [scrollY, setScrollY] = useState(0);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState<'estructura' | 'clevel' | 'sectores' | 'velocidad'>('estructura');
+
+  // ... (rest of observers and clarity)
+
 
   // 1. Visitor count loading (up in production, get in dev/admin)
   useEffect(() => {
@@ -200,7 +206,17 @@ export default function Home() {
               Certificaciones
             </a>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            {/* Language Selector */}
+            <button
+              onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
+              className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-slate-300 dark:border-slate-700 bg-slate-100/80 dark:bg-slate-900/80 text-xs font-mono font-semibold text-foreground hover:border-secondary transition-all"
+              title="Cambiar idioma / Change language"
+            >
+              <Globe className="w-3.5 h-3.5 text-secondary" />
+              <span>{language.toUpperCase()}</span>
+            </button>
+
             {toggleTheme && (
               <Button
                 variant="ghost"
