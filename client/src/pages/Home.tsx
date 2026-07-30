@@ -253,40 +253,52 @@ export default function Home() {
         <div className="container relative z-10 grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Text */}
           <div className="animate-slide-in-left">
-            <div className="label-sm text-secondary mb-4">FINTECH & ACQUIRING • MX / LATAM</div>
+            <div className="label-sm text-secondary mb-4">
+              {language === 'en' ? 'FINTECH & ACQUIRING • MX / LATAM' : 'FINTECH & ACQUIRING • MX / LATAM'}
+            </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              B2B Sales Executive
-              <span className="text-gradient"> Fintech Premium</span>
+              {t('hero.title1')}
+              <br />
+              <span className="text-gradient"> {t('hero.title2')}</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-lg">
-              Especializado en Merchant Acquiring, integraciones API/ISV y expansión regional en México y LATAM. 
-              5+ años transformando pagos digitales en oportunidades de crecimiento.
+              {t('hero.subtitle')}
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mb-8" data-clarity-unmask="true">
               <div>
-                <div className="text-3xl font-bold text-gradient">5+</div>
-                <div className="text-xs text-muted-foreground label-sm">Años Fintech</div>
+                <div className="text-3xl font-bold text-gradient">Top 12%</div>
+                <div className="text-xs text-muted-foreground label-sm">
+                  {language === 'en' ? 'Nationwide Executive' : 'Top Performer Nacional'}
+                </div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gradient">$10M</div>
-                <div className="text-xs text-muted-foreground label-sm">MRR Generado</div>
+                <div className="text-3xl font-bold text-gradient">$555k</div>
+                <div className="text-xs text-muted-foreground label-sm">
+                  {language === 'en' ? 'Avg Deal TPV (MXN)' : 'TPV Prom. / Deal (MXN)'}
+                </div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gradient">1,000+</div>
-                <div className="text-xs text-muted-foreground label-sm">Contactos del Sector</div>
+                <div className="text-3xl font-bold text-gradient">+280%</div>
+                <div className="text-xs text-muted-foreground label-sm">
+                  {language === 'en' ? 'Quota Attainment' : 'Cumplimiento Cuota'}
+                </div>
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex gap-4">
-              <Button className="bg-gradient-to-r from-secondary to-accent hover:opacity-90 text-white px-8">
-                Conectar Ahora <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-              <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary/10">
-                Ver Trayectoria
-              </Button>
+              <a href="#contacto">
+                <Button className="bg-gradient-to-r from-secondary to-accent hover:opacity-90 text-white px-8">
+                  {t('hero.ctaSecondary')} <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </a>
+              <a href="#trayectoria">
+                <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary/10">
+                  {t('hero.ctaPrimary')}
+                </Button>
+              </a>
             </div>
           </div>
 
