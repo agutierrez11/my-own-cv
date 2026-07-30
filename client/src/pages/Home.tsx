@@ -191,19 +191,19 @@ export default function Home() {
           </div>
           <div className="hidden md:flex gap-8">
             <a href="#contacto" className="text-sm hover:text-secondary transition-colors">
-              Contacto
+              {t('footer.nav.contact')}
             </a>
             <a href="#trayectoria" className="text-sm hover:text-secondary transition-colors">
-              Trayectoria
+              {t('footer.nav.experience')}
             </a>
             <a href="#red-activa" className="text-sm hover:text-secondary transition-colors">
-              Red Activa
+              {t('footer.nav.network')}
             </a>
             <a href="#proyectos" className="text-sm hover:text-secondary transition-colors">
-              Proyectos
+              {t('footer.nav.projects')}
             </a>
             <a href="#certificaciones" className="text-sm hover:text-secondary transition-colors">
-              Certificaciones
+              {t('section.certs.label')}
             </a>
           </div>
           <div className="flex items-center gap-3">
@@ -254,7 +254,7 @@ export default function Home() {
           {/* Left: Text */}
           <div className="animate-slide-in-left">
             <div className="label-sm text-secondary mb-4">
-              {language === 'en' ? 'FINTECH & ACQUIRING • MX / LATAM' : 'FINTECH & ACQUIRING • MX / LATAM'}
+              {t('hero.tagline')}
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               {t('hero.title1')}
@@ -269,21 +269,15 @@ export default function Home() {
             <div className="grid grid-cols-3 gap-6 mb-8" data-clarity-unmask="true">
               <div>
                 <div className="text-3xl font-bold text-gradient">Top 12%</div>
-                <div className="text-xs text-muted-foreground label-sm">
-                  {language === 'en' ? 'Nationwide Executive' : 'Top Performer Nacional'}
-                </div>
+                <div className="text-xs text-muted-foreground label-sm">{t('hero.statRank')}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-gradient">$555k</div>
-                <div className="text-xs text-muted-foreground label-sm">
-                  {language === 'en' ? 'Avg Deal TPV (MXN)' : 'TPV Prom. / Deal (MXN)'}
-                </div>
+                <div className="text-xs text-muted-foreground label-sm">{t('hero.statDeal')}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-gradient">+280%</div>
-                <div className="text-xs text-muted-foreground label-sm">
-                  {language === 'en' ? 'Quota Attainment' : 'Cumplimiento Cuota'}
-                </div>
+                <div className="text-xs text-muted-foreground label-sm">{t('hero.statQuota')}</div>
               </div>
             </div>
 
@@ -358,22 +352,22 @@ export default function Home() {
             <div className="w-44 h-44 rounded-full border-2 border-secondary/40 overflow-hidden shadow-xl mx-auto mb-4">
               <img src="/foto_informal_jersey_2.jpg" alt="Antonio Gutiérrez" className="w-full h-full object-cover" />
             </div>
-            <div className="label-sm text-secondary mb-2">PANEL DE CONTACTO · MX / LATAM</div>
+            <div className="label-sm text-secondary mb-2">{t('contact.label')}</div>
             <h2 className="text-3xl md:text-4xl font-bold max-w-3xl mx-auto">
-              Disponibilidad inmediata para incorporarse a nuevos retos profesionales en fintech, partnerships y GTM en México y LATAM
+              {t('contact.title')}
             </h2>
           </div>
 
           <div className="max-w-2xl mx-auto space-y-6">
             {/* Disponibilidad actual */}
             <div className="bg-card border border-border rounded-2xl p-5">
-              <div className="label-sm text-secondary mb-4">DISPONIBILIDAD ACTUAL</div>
+              <div className="label-sm text-secondary mb-4">{t('contact.availability.label')}</div>
               <div className="flex flex-wrap gap-3">
-                {['Roles Comerciales', 'Alianzas Estratégicas', 'Proyectos Especiales'].map(item => (
+                {[t('contact.avail.commercial'), t('contact.avail.alliances'), t('contact.avail.special')].map(item => (
                   <div key={item} className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-secondary"></span>
                     <span className="text-sm font-medium">{item}</span>
-                    <span className="px-2 py-0.5 bg-secondary text-white text-[10px] font-bold rounded-full">ABIERTO</span>
+                    <span className="px-2 py-0.5 bg-secondary text-white text-[10px] font-bold rounded-full">{t('contact.open')}</span>
                   </div>
                 ))}
               </div>
@@ -381,13 +375,13 @@ export default function Home() {
 
             {/* Contacto directo */}
             <div>
-              <div className="label-sm text-secondary mb-3">CONTACTO DIRECTO</div>
+              <div className="label-sm text-secondary mb-3">{t('contact.direct.label')}</div>
               <div className="space-y-2">
                 {[
-                  { icon: '✉️', label: 'EMAIL', value: 'antoniogtzjimenez@gmail.com', href: 'mailto:antoniogtzjimenez@gmail.com', tag: 'MX' },
-                  { icon: '📞', label: 'TELÉFONO', value: '+52 998 119 1903', href: 'tel:+529981191903', tag: 'MX' },
-                  { icon: '💼', label: 'LINKEDIN', value: 'linkedin.com/in/agjbusiness/', href: 'https://linkedin.com/in/agjbusiness/', tag: 'LATAM' },
-                  { icon: '📍', label: 'UBICACIÓN', value: 'Cancún, Quintana Roo, México', href: null, tag: 'MX' },
+                  { icon: '✉️', label: t('contact.item.email.label'), value: 'antoniogtzjimenez@gmail.com', href: 'mailto:antoniogtzjimenez@gmail.com', tag: 'MX' },
+                  { icon: '📞', label: t('contact.item.phone.label'), value: '+52 998 119 1903', href: 'tel:+529981191903', tag: 'MX' },
+                  { icon: '💼', label: t('contact.item.linkedin.label'), value: 'linkedin.com/in/agjbusiness/', href: 'https://linkedin.com/in/agjbusiness/', tag: 'LATAM' },
+                  { icon: '📍', label: t('contact.item.location.label'), value: t('contact.item.location.value'), href: null, tag: 'MX' },
                 ].map((c, i) => (
                   <div key={i} className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-secondary/50 transition-colors">
                     <span className="text-xl w-8 text-center shrink-0">{c.icon}</span>
@@ -412,13 +406,13 @@ export default function Home() {
 
             {/* Enfoque de conversación */}
             <div>
-              <div className="label-sm text-secondary mb-3">ENFOQUE DE CONVERSACIÓN</div>
+              <div className="label-sm text-secondary mb-3">{t('contact.focus.label')}</div>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
-                  { icon: '📊', title: 'Merchant Acquiring', tag: 'LATAM', desc: 'Ciclos outbound, retención de portafolio y expansión B2B en verticales de alto volumen.', targetId: 'experiencia-fiserv' },
-                  { icon: '🔌', title: 'Integraciones API / ISV', tag: 'LATAM', desc: 'Partnerships técnicos con ERP, POS y plataformas de pagos en México y LATAM.', targetId: 'experiencia-clip' },
-                  { icon: '🤝', title: 'Alianzas Estratégicas & GTM', tag: 'LATAM', desc: 'Estructuración de alianzas comerciales, go-to-market y desarrollo de canales regionales.', targetId: 'experiencia-clip' },
-                  { icon: '⚡', title: 'Sales Ops & Automatización', tag: 'LATAM', desc: 'Diseño de flujos de prospección, CRM, reportería y herramientas SalesTech propias.', targetId: 'proyectos' },
+                  { icon: '📊', title: t('contact.focus.acquiring.title'), tag: 'LATAM', desc: t('contact.focus.acquiring.desc'), targetId: 'experiencia-fiserv' },
+                  { icon: '🔌', title: t('contact.focus.api.title'), tag: 'LATAM', desc: t('contact.focus.api.desc'), targetId: 'experiencia-clip' },
+                  { icon: '🤝', title: t('contact.focus.alliances.title'), tag: 'LATAM', desc: t('contact.focus.alliances.desc'), targetId: 'experiencia-clip' },
+                  { icon: '⚡', title: t('contact.focus.salesops.title'), tag: 'LATAM', desc: t('contact.focus.salesops.desc'), targetId: 'proyectos' },
                 ].map((item, i) => (
                   <a key={i} href={`#${item.targetId}`} className="p-4 bg-card border border-border rounded-xl hover:border-secondary/50 transition-colors block text-left">
                     <div className="flex items-center justify-between mb-2">
@@ -439,11 +433,11 @@ export default function Home() {
               <a href="https://wa.me/529981191903?text=Hola%20Antonio,%20vi%20tu%20portafolio%20interactivo%20y%20me%20gustar%C3%ADa%20conversar."
                 target="_blank" rel="noopener noreferrer"
                 className="flex-1 text-center px-6 py-3 bg-secondary text-white rounded-xl font-bold hover:bg-secondary/90 transition-colors">
-                Iniciar conversación
+                {t('contact.cta.whatsapp')}
               </a>
               <a href="https://linkedin.com/in/agjbusiness/" target="_blank" rel="noopener noreferrer"
                 className="flex-1 text-center px-6 py-3 border border-border rounded-xl font-bold hover:border-secondary hover:text-secondary transition-colors">
-                Ver perfil LinkedIn
+                {t('contact.cta.linkedin')}
               </a>
             </div>
           </div>
@@ -456,8 +450,8 @@ export default function Home() {
       <section id="trayectoria" className="relative py-8 bg-background">
         <div className="container">
           <div className="mb-8 scroll-reveal">
-            <div className="label-sm text-secondary mb-2">EXPERIENCIA PROFESIONAL</div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">Trayectoria Clave</h2>
+            <div className="label-sm text-secondary mb-2">{t('section.experience.label')}</div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-2">{t('section.experience.title')}</h2>
           </div>
 
           <div className="space-y-6 max-w-4xl">
@@ -481,14 +475,14 @@ export default function Home() {
                 </div>
               </div>
               <div className="px-6 py-4 space-y-4">
-                <p className="text-sm text-foreground/80">Retención de portafolio, reactivación automatizada y dashboards comerciales para adquirencia a gran escala.</p>
+                <p className="text-sm text-foreground/80">{t('fiserv.desc')}</p>
                 <div className="flex items-center gap-2 bg-secondary/8 border border-secondary/20 rounded-lg px-4 py-2.5 text-sm text-muted-foreground">
                   <Zap className="w-4 h-4 text-secondary shrink-0" />
                   <span>80+ merchants monitoreados · Power BI + Power Automate · Salesforce dashboards configurados</span>
                 </div>
                 <div className="flex gap-8 py-2">
-                  <div><div className="text-2xl font-bold text-foreground">80+</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Merchants</div></div>
-                  <div><div className="text-2xl font-bold text-foreground">+15</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Opp/Mes</div></div>
+                  <div><div className="text-2xl font-bold text-foreground">80+</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">{t('fiserv.merchants')}</div></div>
+                  <div><div className="text-2xl font-bold text-foreground">+15</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">{t('fiserv.opp')}</div></div>
                   <div><div className="text-2xl font-bold text-foreground">100%</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Data Integrity</div></div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -525,7 +519,7 @@ export default function Home() {
                   <div>
                     <div className="text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">ENTERPRISE SALES · MX · eCommerce · Retail</div>
                     <h3 className="text-2xl font-bold text-foreground">Clip</h3>
-                    <p className="text-sm text-secondary font-semibold">Asesor Comercial</p>
+                    <p className="text-sm text-secondary font-semibold">{t('clip.role')}</p>
                   </div>
                 </div>
                 <div className="text-right shrink-0">
@@ -534,15 +528,15 @@ export default function Home() {
                 </div>
               </div>
               <div className="px-6 py-4 space-y-4">
-                <p className="text-sm text-foreground/80">Ventas enterprise, integraciones API/ISV y desarrollo de partnerships comerciales.</p>
+                <p className="text-sm text-foreground/80">{t('clip.desc')}</p>
                 <div className="flex items-center gap-2 bg-secondary/8 border border-secondary/20 rounded-lg px-4 py-2.5 text-sm text-muted-foreground">
                   <Zap className="w-4 h-4 text-secondary shrink-0" />
                   <span>$69M MXN TPV total · 75.3% volumen auto-generado · Top Performer (Podio Nacional Clip, 109% cuota)</span>
                 </div>
                 <div className="flex gap-8 py-2">
-                  <div><div className="text-2xl font-bold text-foreground">$69M</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">TPV Procesado</div></div>
+                  <div><div className="text-2xl font-bold text-foreground">$69M</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">{t('clip.tpv')}</div></div>
                   <div><div className="text-2xl font-bold text-foreground">75.3%</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Outbound Vol</div></div>
-                  <div><div className="text-2xl font-bold text-foreground">29</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Deals Activos</div></div>
+                  <div><div className="text-2xl font-bold text-foreground">29</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">{t('clip.deals')}</div></div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
@@ -602,15 +596,15 @@ export default function Home() {
                 </div>
               </div>
               <div className="px-6 py-4 space-y-4">
-                <p className="text-sm text-foreground/80">Expansión territorial, cuentas clave y crecimiento de share.</p>
+                <p className="text-sm text-foreground/80">{t('jti.desc')}</p>
                 <div className="flex items-center gap-2 bg-secondary/8 border border-secondary/20 rounded-lg px-4 py-2.5 text-sm text-muted-foreground">
                   <Zap className="w-4 h-4 text-secondary shrink-0" />
                   <span>+40% Share of Opportunity · +35% base activa · 100+ hoteles cubiertos en Cancún y Riviera Maya</span>
                 </div>
                 <div className="flex gap-8 py-2">
                   <div><div className="text-2xl font-bold text-foreground">+40%</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Share Opp</div></div>
-                  <div><div className="text-2xl font-bold text-foreground">+35%</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Base Activa</div></div>
-                  <div><div className="text-2xl font-bold text-foreground">100+</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Hoteles</div></div>
+                  <div><div className="text-2xl font-bold text-foreground">+35%</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">{t('jti.active')}</div></div>
+                  <div><div className="text-2xl font-bold text-foreground">100+</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">{t('jti.hotels')}</div></div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
@@ -655,15 +649,15 @@ export default function Home() {
                 </div>
               </div>
               <div className="px-6 py-4 space-y-4">
-                <p className="text-sm text-foreground/80">Comunidad, curaduría sectorial y conexión regional en pagos digitales.</p>
+                <p className="text-sm text-foreground/80">{t('latam.desc')}</p>
                 <div className="flex items-center gap-2 bg-secondary/8 border border-secondary/20 rounded-lg px-4 py-2.5 text-sm text-muted-foreground">
                   <Zap className="w-4 h-4 text-secondary shrink-0" />
                   <span>500+ profesionales · LinkedIn & WhatsApp · Acquiring, procesamiento digital y seguridad en eCommerce</span>
                 </div>
                 <div className="flex gap-8 py-2">
-                  <div><div className="text-2xl font-bold text-foreground">500+</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Profesionales</div></div>
-                  <div><div className="text-2xl font-bold text-foreground">LATAM</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Cobertura</div></div>
-                  <div><div className="text-2xl font-bold text-foreground">Activa</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Comunidad</div></div>
+                  <div><div className="text-2xl font-bold text-foreground">500+</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">{t('latam.professionals')}</div></div>
+                  <div><div className="text-2xl font-bold text-foreground">LATAM</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">{t('latam.coverage')}</div></div>
+                  <div><div className="text-2xl font-bold text-foreground">Active</div><div className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">{t('latam.community')}</div></div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
@@ -727,12 +721,12 @@ export default function Home() {
 
         <div className="container relative z-10">
           <div className="mb-10 scroll-reveal">
-            <div className="label-sm text-secondary mb-2">CAPITAL DE RELACIONES (BYOD)</div>
+            <div className="label-sm text-secondary mb-2">{t('section.network.label')}</div>
             <h2 className="text-3xl md:text-4xl font-bold mb-2">
-              Red Activa de Contactos en LATAM
+              {t('section.network.title')}
             </h2>
             <p className="text-sm text-muted-foreground max-w-2xl">
-              Mi portafolio de contactos no es una base de datos estática en frío. Es un ecosistema vivo de relaciones directas y canales de comunicación ya abiertos con tomadores de decisión clave.
+              {t('section.network.subtitle')}
             </p>
           </div>
 
@@ -745,11 +739,11 @@ export default function Home() {
                   <div className="p-2 bg-blue-500/10 text-blue-400 rounded-lg">
                     <Users className="w-5 h-5" />
                   </div>
-                  <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase">Conexiones Directas</span>
+                  <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase">{t('network.direct')}</span>
                 </div>
                 <div className="text-3xl font-bold mb-1">3,115</div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Contactos de primer grado en LinkedIn. Acceso inmediato sin intermediarios ni filtros para campañas comerciales.
+                  {t('network.direct.desc')}
                 </p>
               </div>
 
@@ -759,11 +753,11 @@ export default function Home() {
                   <div className="p-2 bg-secondary/15 text-secondary rounded-lg">
                     <TrendingUp className="w-5 h-5" />
                   </div>
-                  <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase">Tomadores de Decisión</span>
+                  <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase">{t('network.decision')}</span>
                 </div>
-                <div className="text-3xl font-bold mb-1">63% <span className="text-xs text-muted-foreground font-normal">({(1967).toLocaleString()} contactos)</span></div>
+                <div className="text-3xl font-bold mb-1">63% <span className="text-xs text-muted-foreground font-normal">({(1967).toLocaleString()} {language === 'en' ? 'contacts' : 'contactos'})</span></div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  1,115 perfiles directivos C-Level (CEOs, CFOs, Fundadores) y 852 directores y gerentes de sector en la región.
+                  {t('network.decision.desc')}
                 </p>
               </div>
 
@@ -773,11 +767,11 @@ export default function Home() {
                   <div className="p-2 bg-emerald-500/10 text-emerald-400 rounded-lg">
                     <MessageSquare className="w-5 h-5" />
                   </div>
-                  <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase">Chats Activos</span>
+                  <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase">{t('network.chats')}</span>
                 </div>
-                <div className="text-3xl font-bold mb-1">1,099 <span className="text-xs text-muted-foreground font-normal">(35% de la red)</span></div>
+                <div className="text-3xl font-bold mb-1">1,099 <span className="text-xs text-muted-foreground font-normal">(35% {language === 'en' ? 'of network' : 'de la red'})</span></div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Contactos con historial de mensajería bidireccional activa. Relaciones precalentadas listas para prospección.
+                  {t('network.chats.desc')}
                 </p>
               </div>
             </div>
@@ -789,16 +783,16 @@ export default function Home() {
                   <span className="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse" />
                   <span className="text-xs font-mono tracking-wider text-slate-400 font-semibold">SOVEREIGN SALES WALLET</span>
                 </div>
-                <span className="px-2 py-0.5 bg-secondary/20 text-secondary text-[10px] font-bold rounded">MAPA DE CALIDEZ</span>
+                <span className="px-2 py-0.5 bg-secondary/20 text-secondary text-[10px] font-bold rounded">{t('network.warmth')}</span>
               </div>
 
               {/* Tabs */}
               <div className="flex gap-2 my-4">
                 {[
-                  { id: 'estructura', label: 'Estructura' },
-                  { id: 'clevel', label: 'Chats C-Level' },
-                  { id: 'sectores', label: 'Sectores Clave' },
-                  { id: 'velocidad', label: 'Velocidad' },
+                  { id: 'estructura', label: t('network.tab.structure') },
+                  { id: 'clevel', label: t('network.tab.clevel') },
+                  { id: 'sectores', label: t('network.tab.sectors') },
+                  { id: 'velocidad', label: t('network.tab.velocity') },
                 ].map(tab => (
                   <button
                     key={tab.id}
@@ -954,7 +948,7 @@ export default function Home() {
               </div>
 
               <div className="text-[11px] text-slate-400 text-center border-t border-slate-800 pt-3">
-                💡 Velocidad de ataque: El contacto directo elimina el tiempo de espera por solicitudes de conexión en LinkedIn, acelerando los ciclos de cierre de cuentas clave (ABM).
+                {t('network.insight')}
               </div>
             </div>
           </div>
@@ -965,9 +959,9 @@ export default function Home() {
       <section id="proyectos" className="relative py-8 bg-gradient-to-b from-background to-primary/5">
         <div className="container">
           <div className="mb-8 scroll-reveal">
-            <div className="label-sm text-secondary mb-2">PROYECTOS & CAPACIDADES</div>
+            <div className="label-sm text-secondary mb-2">{t('section.projects.label')}</div>
             <h2 className="text-3xl md:text-4xl font-bold mb-2">
-              Proyectos y capacidades que convierten insight comercial en ejecución fintech
+              {t('section.projects.title')}
             </h2>
           </div>
 
@@ -1005,12 +999,12 @@ export default function Home() {
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className="label-sm text-accent">MVP • EN DESARROLLO</span>
+                    <span className="label-sm text-accent">{t('project.nerv.status')}</span>
                     <span className="label-sm bg-blue-500/15 text-blue-400 px-2 py-0.5 rounded-full">LATAM</span>
                   </div>
                   <h3 className="text-xl font-bold mb-1 text-gradient">Nerv — Sales Intelligence Tool</h3>
                   <p className="text-[10px] text-muted-foreground/70 mb-2">B2B SaaS · Developer &amp; Designer · 02/2026 – Presente</p>
-                  <p className="text-xs text-muted-foreground mb-3">Herramienta propietaria de prospección outbound que mapea y segmenta más de 1,000 fintechs y actores de pagos en LATAM, con IA generativa para battlecards y detección de oportunidades comerciales.</p>
+                  <p className="text-xs text-muted-foreground mb-3">{t('project.nerv.desc')}</p>
                   <div className="flex flex-col gap-1.5">
                     {[
                       { label: '1,000+ fintechs mapeadas', tag: 'LATAM' },
@@ -1067,11 +1061,11 @@ export default function Home() {
                 <div className="p-5">
                   <div className="label-sm text-amber-500 mb-1.5">SALES & PRODUCTIVITY</div>
                   <h3 className="text-xl font-bold mb-2 text-gradient">Tonos Tool Treasurebox</h3>
-                  <p className="text-xs text-muted-foreground mb-4 line-clamp-3">Colección curada de herramientas de ventas y marketing. Incluye calculadoras de conversión y Sales Wizard.</p>
+                  <p className="text-xs text-muted-foreground mb-4 line-clamp-3">{t('project.treasurebox.desc')}</p>
                 </div>
               </div>
               <div className="px-5 pb-5 pt-0">
-                <a href="https://tools-erb.pages.dev" target="_blank" rel="noopener noreferrer" className="w-full block text-center py-2 bg-secondary text-white rounded-lg text-xs font-bold hover:bg-secondary/90 transition-colors">Ver Demo</a>
+                <a href="https://tools-erb.pages.dev" target="_blank" rel="noopener noreferrer" className="w-full block text-center py-2 bg-secondary text-white rounded-lg text-xs font-bold hover:bg-secondary/90 transition-colors">{t('project.cta.demo')}</a>
               </div>
             </Card3D>
 
@@ -1112,15 +1106,15 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-5">
-                  <div className="label-sm text-secondary mb-1.5">COMUNIDAD ACTIVA</div>
+                  <div className="label-sm text-secondary mb-1.5">{t('project.latamcommerce.label')}</div>
                   <h3 className="text-xl font-bold mb-2 text-gradient">LATAMcommerce</h3>
-                  <p className="text-xs text-muted-foreground mb-4 line-clamp-3">Comunidad cofundada de 500+ profesionales en pagos, acquiring y eCommerce. LinkedIn + WhatsApp.</p>
+                  <p className="text-xs text-muted-foreground mb-4 line-clamp-3">{t('project.latamcommerce.desc')}</p>
                 </div>
               </div>
               <div className="px-5 pb-5 pt-0">
                 <a href="https://latamcommerce.com/" target="_blank" rel="noopener noreferrer"
                   className="w-full block text-center py-2 bg-secondary text-white rounded-lg text-xs font-bold hover:bg-secondary/90 transition-colors">
-                  Ir al Sitio
+                  {t('project.cta.site')}
                 </a>
               </div>
             </Card3D>
@@ -1134,12 +1128,12 @@ export default function Home() {
       <section id="certificaciones" className="relative py-8 bg-background border-t border-border/30">
         <div className="container">
           <div className="mb-6">
-            <div className="label-sm text-secondary mb-2">EDUCACIÓN CONTINUA</div>
+            <div className="label-sm text-secondary mb-2">{t('section.certs.label')}</div>
             <h2 className="text-3xl md:text-4xl font-bold mb-2">
-              Certificaciones & Especializaciones
+              {t('section.certs.title')}
             </h2>
             <p className="text-sm text-muted-foreground">
-              Programas de desarrollo profesional y especializaciones con validez oficial del sector.
+              {t('section.certs.subtitle')}
             </p>
           </div>
 
@@ -1196,7 +1190,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gradient">{cert.title}</h3>
                   <p className="text-sm leading-relaxed text-muted-foreground mb-4">
-                    <span className="font-semibold text-foreground">Módulos clave:</span> {cert.lessons}
+                    <span className="font-semibold text-foreground">{t('cert.keymodules')}</span> {cert.lessons}
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4 mt-2">
@@ -1206,7 +1200,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent/80 font-bold transition-colors"
                   >
-                    Verificar Credencial <ArrowRight className="w-4 h-4" />
+                    {t('cert.verify')} <ArrowRight className="w-4 h-4" />
                   </a>
                   {cert.document && (
                     <a
@@ -1215,7 +1209,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-sm text-secondary hover:text-secondary/80 font-bold transition-colors"
                     >
-                      Ver Documento <ArrowRight className="w-4 h-4" />
+                      {t('cert.view')} <ArrowRight className="w-4 h-4" />
                     </a>
                   )}
                 </div>
@@ -1263,17 +1257,17 @@ export default function Home() {
         <div className="border-t border-border">
           <div className="container py-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-muted-foreground">
             <nav className="flex gap-6 font-semibold tracking-widest uppercase">
-              <a href="#trayectoria" className="hover:text-foreground transition-colors">Trayectoria</a>
-              <a href="#red-activa" className="hover:text-foreground transition-colors">Red Activa</a>
-              <a href="#proyectos" className="hover:text-foreground transition-colors">Proyectos</a>
-              <a href="#contacto" className="hover:text-foreground transition-colors">Contacto</a>
+              <a href="#trayectoria" className="hover:text-foreground transition-colors">{t('footer.nav.experience')}</a>
+              <a href="#red-activa" className="hover:text-foreground transition-colors">{t('footer.nav.network')}</a>
+              <a href="#proyectos" className="hover:text-foreground transition-colors">{t('footer.nav.projects')}</a>
+              <a href="#contacto" className="hover:text-foreground transition-colors">{t('footer.nav.contact')}</a>
             </nav>
             <div className="flex items-center gap-3">
               <span>© 2026 · Antonio Gutiérrez Jiménez</span>
               {visitorCount !== null && (
                 <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono text-[10px]">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
-                  Visitas: {visitorCount.toLocaleString()}
+                  {t('footer.visits')}: {visitorCount.toLocaleString()}
                 </span>
               )}
             </div>
