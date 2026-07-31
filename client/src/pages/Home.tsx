@@ -1248,17 +1248,30 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* Single Primary Action Button */}
-                <div className="pt-3 border-t border-border/40">
-                  <a
-                    href={cert.document || cert.link || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-2.5 px-4 rounded-xl bg-muted/60 hover:bg-secondary hover:text-white border border-border text-foreground font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-sm"
-                  >
-                    <span>{cert.document ? t('cert.view') : t('cert.verify')}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
+                {/* Action Buttons: Official Site URL + Diploma Document */}
+                <div className="pt-3 border-t border-border/40 flex flex-wrap gap-2">
+                  {cert.link && (
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 min-w-[130px] py-2 px-3 rounded-xl bg-secondary/10 hover:bg-secondary hover:text-white border border-secondary/30 text-secondary font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-sm"
+                    >
+                      <span>🌐 {t('cert.verify')}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                  {cert.document && (
+                    <a
+                      href={cert.document}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 min-w-[130px] py-2 px-3 rounded-xl bg-muted/60 hover:bg-accent hover:text-white border border-border text-foreground font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-sm"
+                    >
+                      <span>📄 {t('cert.view')}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  )}
                 </div>
               </Card3D>
             ))}
