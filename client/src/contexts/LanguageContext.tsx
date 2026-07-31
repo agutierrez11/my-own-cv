@@ -125,6 +125,14 @@ export const translations: Record<Language, Record<string, string>> = {
     'cert.keymodules': 'Módulos clave:',
     'cert.verify': 'Verificar Credencial',
     'cert.view': 'Ver Documento',
+    'cert.mckinsey.duration': '120 Horas de capacitación intensiva',
+    'cert.mckinsey.lessons': 'Liderazgo adaptativo, resolución estructurada de problemas complejos, comunicación estructurada y metodologías ágiles.',
+    'cert.growth.duration': '30 Horas con expertos globales',
+    'cert.growth.lessons': 'Curso formativo acerca de Growth, es una metodología y mindset de testeo rápido para identificar cómo crecer eficientemente un negocio a alta velocidad.',
+    'cert.mastering.duration': '70 Horas • 150 Lecciones',
+    'cert.mastering.lessons': '150 lecciones y 70 horas de formación para armar tu equipo de ventas desde 0, incluyendo metodologías, stack tecnológico y Masterclass con referentes de la industria.',
+    'cert.sdr.duration': '16 Horas',
+    'cert.sdr.lessons': '16 horas de pura genialidad con los líderes de la comunidad de SDR más grande de LATAM.',
 
     // Footer
     'footer.nav.experience': 'Trayectoria',
@@ -305,6 +313,14 @@ export const translations: Record<Language, Record<string, string>> = {
     'cert.keymodules': 'Key modules:',
     'cert.verify': 'Verify Credential',
     'cert.view': 'View Document',
+    'cert.mckinsey.duration': '120 Hours Intensive Training',
+    'cert.mckinsey.lessons': 'Adaptive leadership, structured complex problem solving, structured communication, and agile frameworks.',
+    'cert.growth.duration': '30 Hours with Global Experts',
+    'cert.growth.lessons': 'Comprehensive Growth course covering rapid testing frameworks and mindsets to scale business operations efficiently.',
+    'cert.mastering.duration': '70 Hours • 150 Lessons',
+    'cert.mastering.lessons': '150 lessons and 70 hours of intensive training to build sales teams from scratch, covering sales tech stack, GTM methodologies, and industry masterclasses.',
+    'cert.sdr.duration': '16 Hours',
+    'cert.sdr.lessons': '16 hours of advanced outbound tactics with top leaders from LATAM’s largest SDR community.',
 
     // Footer
     'footer.nav.experience': 'Experience',
