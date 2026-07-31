@@ -1187,6 +1187,7 @@ export default function Home() {
                 duration: '30 Horas con expertos globales',
                 lessons: 'Curso formativo acerca de Growth, es una metodología y mindset de testeo rápido para identificar cómo crecer eficientemente un negocio a alta velocidad.',
                 link: 'https://kurios.la/',
+                previewImg: './cert_growth101.png',
                 document: './Curso_Growth101_Kurios.pdf'
               },
               {
@@ -1195,6 +1196,7 @@ export default function Home() {
                 duration: '70 Horas • 150 Lecciones',
                 lessons: '150 lecciones y 70 horas de formación para armar tu equipo de ventas desde 0, incluyendo metodologías, stack tecnológico y Masterclass con referentes de la industria.',
                 link: 'https://www.salesprofessional.com/',
+                previewImg: './cert_mastering_ventas.png',
                 document: './Mastering_Ventas_2024-02-20.pdf'
               },
               {
