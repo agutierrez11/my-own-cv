@@ -11,10 +11,11 @@ import Home from "./pages/Home";
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
+      <Route path="/404" component={NotFound} />
+      <Route path="/" component={Home} />
+      <Route path="/agutierrezj-profile" component={Home} />
+      {/* Fallback to Home for subpaths instead of broken 404 */}
+      <Route component={Home} />
     </Switch>
   );
 }
