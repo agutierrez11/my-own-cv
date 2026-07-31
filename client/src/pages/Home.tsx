@@ -1206,15 +1206,6 @@ export default function Home() {
                 previewImg: './Curso_SDR_Primera_Reunion.jpg',
                 document: './Curso_SDR_Primera_Reunion.jpg'
               },
-              {
-                title: 'Complex Problem Solving',
-                institution: 'McKinsey.org',
-                duration: 'Certificación Especializada',
-                lessons: 'Metodología estructurada de 7 pasos para resolución de problemas complejos de negocio y pensamiento crítico.',
-                link: 'https://www.credly.com/badges/6e70dbb0-7695-4a46-a19e-6bc684256715/linked_in?t=sz1afc',
-                logo: './mckinsey_badge.png',
-                document: './Complex_Problem_Solving.pdf'
-              },
             ].map((cert, idx) => (
               <Card3D key={idx} className="bg-card border border-border/80 p-6 flex flex-col justify-between hover:border-secondary/40 transition-colors">
                 <div>
