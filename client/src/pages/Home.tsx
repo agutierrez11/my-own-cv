@@ -1179,7 +1179,6 @@ export default function Home() {
                 link: 'https://www.credly.com/badges/6e70dbb0-7695-4a46-a19e-6bc684256715/linked_in?t=sz1afc',
                 logo: './mckinsey_badge.png',
                 previewImg: './mckinsey_badge.png',
-                document: './Mckinseyaccelerate_Cuaderno_de_Aprendizaje_Forward.pdf'
               },
               {
                 title: 'Growth 101',
@@ -1195,7 +1194,7 @@ export default function Home() {
                 institution: 'Sales Professional',
                 duration: t('cert.mastering.duration'),
                 lessons: t('cert.mastering.lessons'),
-                link: 'https://www.salesprofessional.com/',
+                link: 'https://www.masteringventas.com/',
                 previewImg: './cert_mastering_ventas.png',
                 document: './Mastering_Ventas_2024-02-20.pdf'
               },
@@ -1204,7 +1203,7 @@ export default function Home() {
                 institution: 'LATAM SDR Leaders',
                 duration: t('cert.sdr.duration'),
                 lessons: t('cert.sdr.lessons'),
-                link: './Curso_SDR_Primera_Reunion.jpg',
+                link: 'https://primerareunion.com/',
                 previewImg: './Curso_SDR_Primera_Reunion.jpg',
                 document: './Curso_SDR_Primera_Reunion.jpg'
               },
@@ -1227,10 +1226,10 @@ export default function Home() {
                   
                   <h3 className="text-xl font-bold mb-3 text-gradient">{cert.title}</h3>
 
-                  {/* Certificate Preview Banner for ALL cards (Images & PDFs) */}
-                  {cert.previewImg ? (
+                  {/* Certificate Preview Image */}
+                  {cert.previewImg && (
                     <div 
-                      className="mb-4 h-36 rounded-xl border border-border bg-muted/40 dark:bg-slate-950/50 overflow-hidden relative group cursor-zoom-in flex items-center justify-center p-2.5 shadow-sm transition-all hover:border-secondary/50"
+                      className="mb-4 h-40 rounded-xl border border-border bg-muted/30 dark:bg-slate-950/40 overflow-hidden relative group cursor-zoom-in flex items-center justify-center p-2.5 shadow-sm transition-all hover:border-secondary/50"
                       onClick={() => setLightboxImg(cert.previewImg!)}
                     >
                       <img 
@@ -1239,54 +1238,27 @@ export default function Home() {
                         className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                        <span className="opacity-0 group-hover:opacity-100 text-white text-xs font-semibold bg-slate-900/80 dark:bg-black/80 px-3 py-1.5 rounded-full backdrop-blur-md transition-opacity shadow-lg">🔍 Ver Certificado</span>
+                        <span className="opacity-0 group-hover:opacity-100 text-white text-xs font-semibold bg-slate-900/80 dark:bg-black/80 px-3 py-1.5 rounded-full backdrop-blur-md transition-opacity shadow-lg">🔍 Ampliar Vista</span>
                       </div>
                     </div>
-                  ) : cert.document ? (
-                    <a 
-                      href={cert.document}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mb-4 h-36 rounded-xl border border-secondary/30 dark:border-cyan-500/30 overflow-hidden bg-gradient-to-br from-secondary/10 via-card to-accent/10 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 relative group flex flex-col items-center justify-center p-4 transition-all hover:border-secondary hover:shadow-lg block"
-                    >
-                      <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
-                      <div className="flex items-center gap-2 mb-2 z-10">
-                        <span className="w-2 h-2 rounded-full bg-secondary dark:bg-cyan-400 animate-pulse" />
-                        <span className="text-[10px] font-mono text-secondary dark:text-cyan-300 font-bold uppercase tracking-wider">📄 DIPLOMA OFICIAL PDF</span>
-                      </div>
-                      <div className="text-base font-bold text-foreground dark:text-white z-10 text-center line-clamp-1">{cert.title}</div>
-                      <div className="text-xs text-muted-foreground z-10 text-center mt-1">{cert.institution}</div>
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 dark:group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                        <span className="opacity-0 group-hover:opacity-100 text-white text-xs font-semibold bg-secondary dark:bg-cyan-500 px-3.5 py-1.5 rounded-full backdrop-blur-md transition-opacity shadow-lg">📥 Abrir Diploma PDF</span>
-                      </div>
-                    </a>
-                  ) : null}
+                  )}
 
                   <p className="text-sm leading-relaxed text-muted-foreground mb-4">
                     <span className="font-semibold text-foreground">{t('cert.keymodules')}</span> {cert.lessons}
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-4 mt-2 pt-3 border-t border-border/40">
-                  {cert.link && (
-                    <a
-                      href={cert.link}
-                      target={cert.link.startsWith('http') ? '_blank' : undefined}
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent/80 font-bold transition-colors"
-                    >
-                      {t('cert.verify')} <ArrowRight className="w-4 h-4" />
-                    </a>
-                  )}
-                  {cert.document && (
-                    <a
-                      href={cert.document}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm text-secondary hover:text-secondary/80 font-bold transition-colors"
-                    >
-                      {t('cert.view')} <ArrowRight className="w-4 h-4" />
-                    </a>
-                  )}
+
+                {/* Single Primary Action Button */}
+                <div className="pt-3 border-t border-border/40">
+                  <a
+                    href={cert.document || cert.link || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 px-4 rounded-xl bg-muted/60 hover:bg-secondary hover:text-white border border-border text-foreground font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-sm"
+                  >
+                    <span>{cert.document ? t('cert.view') : t('cert.verify')}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
                 </div>
               </Card3D>
             ))}
