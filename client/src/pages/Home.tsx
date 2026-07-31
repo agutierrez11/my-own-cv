@@ -1225,8 +1225,8 @@ export default function Home() {
                   
                   <h3 className="text-xl font-bold mb-3 text-gradient">{cert.title}</h3>
 
-                  {/* Certificate Image Preview Badge if available */}
-                  {cert.previewImg && (
+                  {/* Certificate Preview Banner for ALL cards (Images & PDFs) */}
+                  {cert.previewImg ? (
                     <div 
                       className="mb-4 h-36 rounded-xl border border-border/60 overflow-hidden bg-slate-950/40 relative group cursor-zoom-in flex items-center justify-center p-2"
                       onClick={() => setLightboxImg(cert.previewImg!)}
@@ -1236,11 +1236,29 @@ export default function Home() {
                         alt={cert.title} 
                         className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                        <span className="opacity-0 group-hover:opacity-100 text-white text-xs font-semibold bg-black/70 px-3 py-1.5 rounded-full backdrop-blur-md transition-opacity">🔍 Ver Certificado</span>
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 text-white text-xs font-semibold bg-black/80 px-3 py-1.5 rounded-full backdrop-blur-md transition-opacity shadow-lg">🔍 Ver Certificado</span>
                       </div>
                     </div>
-                  )}
+                  ) : cert.document ? (
+                    <a 
+                      href={cert.document}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mb-4 h-36 rounded-xl border border-cyan-500/30 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 relative group flex flex-col items-center justify-center p-4 transition-all hover:border-cyan-400 hover:shadow-lg shadow-cyan-500/10 block"
+                    >
+                      <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
+                      <div className="flex items-center gap-2 mb-2 z-10">
+                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                        <span className="text-[10px] font-mono text-cyan-300 font-bold uppercase tracking-wider">📄 DIPLOMA OFICIAL PDF</span>
+                      </div>
+                      <div className="text-base font-bold text-white z-10 text-center line-clamp-1">{cert.title}</div>
+                      <div className="text-xs text-muted-foreground z-10 text-center mt-1">{cert.institution}</div>
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 text-white text-xs font-semibold bg-cyan-500/90 px-3 py-1.5 rounded-full backdrop-blur-md transition-opacity shadow-lg">📥 Abrir Diploma PDF</span>
+                      </div>
+                    </a>
+                  ) : null}
 
                   <p className="text-sm leading-relaxed text-muted-foreground mb-4">
                     <span className="font-semibold text-foreground">{t('cert.keymodules')}</span> {cert.lessons}
