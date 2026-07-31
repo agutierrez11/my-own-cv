@@ -1177,8 +1177,9 @@ export default function Home() {
                 duration: '120 Horas de capacitación intensiva',
                 lessons: 'Liderazgo adaptativo, resolución estructurada de problemas complejos, comunicación estructurada y metodologías ágiles.',
                 link: 'https://www.credly.com/badges/6e70dbb0-7695-4a46-a19e-6bc684256715/linked_in?t=sz1afc',
-                logo: '/mckinsey_badge.png',
-                document: '/Mckinseyaccelerate_Cuaderno_de_Aprendizaje_Forward.pdf'
+                logo: './mckinsey_badge.png',
+                previewImg: './mckinsey_badge.png',
+                document: './Mckinseyaccelerate_Cuaderno_de_Aprendizaje_Forward.pdf'
               },
               {
                 title: 'Growth 101',
@@ -1186,7 +1187,7 @@ export default function Home() {
                 duration: '30 Horas con expertos globales',
                 lessons: 'Curso formativo acerca de Growth, es una metodología y mindset de testeo rápido para identificar cómo crecer eficientemente un negocio a alta velocidad.',
                 link: 'https://kurios.la/',
-                document: '/Curso_Growth101_Kurios.pdf'
+                document: './Curso_Growth101_Kurios.pdf'
               },
               {
                 title: 'Mastering Ventas',
@@ -1194,18 +1195,28 @@ export default function Home() {
                 duration: '70 Horas • 150 Lecciones',
                 lessons: '150 lecciones y 70 horas de formación para armar tu equipo de ventas desde 0, incluyendo metodologías, stack tecnológico y Masterclass con referentes de la industria.',
                 link: 'https://www.salesprofessional.com/',
-                document: '/Mastering_Ventas_2024-02-20.pdf'
+                document: './Mastering_Ventas_2024-02-20.pdf'
               },
               {
                 title: 'Curso SDR Primera Reunión',
                 institution: 'LATAM SDR Leaders',
                 duration: '16 Horas',
                 lessons: '16 horas de pura genialidad con los líderes de la comunidad de SDR más grande de LATAM.',
-                link: '/Curso_SDR_Primera_Reunion.jpg',
-                document: '/Curso_SDR_Primera_Reunion.jpg'
+                link: './Curso_SDR_Primera_Reunion.jpg',
+                previewImg: './Curso_SDR_Primera_Reunion.jpg',
+                document: './Curso_SDR_Primera_Reunion.jpg'
+              },
+              {
+                title: 'Complex Problem Solving',
+                institution: 'McKinsey.org',
+                duration: 'Certificación Especializada',
+                lessons: 'Metodología estructurada de 7 pasos para resolución de problemas complejos de negocio y pensamiento crítico.',
+                link: 'https://www.credly.com/badges/6e70dbb0-7695-4a46-a19e-6bc684256715/linked_in?t=sz1afc',
+                logo: './mckinsey_badge.png',
+                document: './Complex_Problem_Solving.pdf'
               },
             ].map((cert, idx) => (
-              <Card3D key={idx} className="bg-card border border-border/80 p-6 flex flex-col justify-between">
+              <Card3D key={idx} className="bg-card border border-border/80 p-6 flex flex-col justify-between hover:border-secondary/40 transition-colors">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
@@ -1220,20 +1231,41 @@ export default function Home() {
                     </div>
                     <span className="text-xs text-muted-foreground font-mono">{cert.duration}</span>
                   </div>
+                  
                   <h3 className="text-xl font-bold mb-3 text-gradient">{cert.title}</h3>
+
+                  {/* Certificate Image Preview Badge if available */}
+                  {cert.previewImg && (
+                    <div 
+                      className="mb-4 h-36 rounded-xl border border-border/60 overflow-hidden bg-slate-950/40 relative group cursor-zoom-in flex items-center justify-center p-2"
+                      onClick={() => setLightboxImg(cert.previewImg!)}
+                    >
+                      <img 
+                        src={cert.previewImg} 
+                        alt={cert.title} 
+                        className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 text-white text-xs font-semibold bg-black/70 px-3 py-1.5 rounded-full backdrop-blur-md transition-opacity">🔍 Ver Certificado</span>
+                      </div>
+                    </div>
+                  )}
+
                   <p className="text-sm leading-relaxed text-muted-foreground mb-4">
                     <span className="font-semibold text-foreground">{t('cert.keymodules')}</span> {cert.lessons}
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-4 mt-2">
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent/80 font-bold transition-colors"
-                  >
-                    {t('cert.verify')} <ArrowRight className="w-4 h-4" />
-                  </a>
+                <div className="flex flex-wrap gap-4 mt-2 pt-3 border-t border-border/40">
+                  {cert.link && (
+                    <a
+                      href={cert.link}
+                      target={cert.link.startsWith('http') ? '_blank' : undefined}
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent/80 font-bold transition-colors"
+                    >
+                      {t('cert.verify')} <ArrowRight className="w-4 h-4" />
+                    </a>
+                  )}
                   {cert.document && (
                     <a
                       href={cert.document}
