@@ -1,12 +1,11 @@
 # Reglas del Proyecto - Fintech Portfolio Optimized
 
 ## Flujo de Despliegue (Deployment Flow)
-- **Compilación Local:** Los cambios del frontend deben compilarse localmente en la carpeta `C:\Users\Antonio\OneDrive\Escritorio\fintech-portfolio-optimized\dist` (específicamente la parte estática del cliente se genera en `dist/public`).
-- **Despliegue Manual:** El usuario sube manualmente los archivos compilados de la carpeta `dist/public` a Cloudflare Pages.
-- **Acción Obligatoria:** Cada vez que se modifique el código del cliente (React/TypeScript), se debe ejecutar inmediatamente el comando de compilación (`npm run build`) para actualizar la carpeta `dist`.
-- **Git Push:** No intentar hacer push automático a GitHub para desplegar, a menos que el usuario lo solicite de manera explícita o se discuta la sincronización con Vercel.
-- **Vercel (Espejo):** Vercel (`https://fintech-portfolio-optimized.vercel.app/`) se utiliza como un espejo secundario porque el subdominio por defecto de Cloudflare Pages (`.pages.dev`) a veces es catalogado como sospechoso o malicioso en ciertas plataformas (como LinkedIn). Para actualizar Vercel, los cambios deben ser subidos a GitHub (`git commit` y `git push`), lo cual dispara su compilación y despliegue automático.
-- **Servicio Principal:** Cloudflare Pages es el servicio de despliegue principal.
+- **Deploy Principal:** `git commit` + `git push origin main` → Cloudflare Pages auto-build → sitio live. NO se requieren uploads manuales.
+- **Cloudflare Pages** (`cvagutierrezj2026.pages.dev`): conectado a `agutierrez11/my-own-cv` (branch `main`). Build command: `npm run build`. Output: `dist/public`.
+- **Vercel (Espejo LinkedIn):** `https://fintech-portfolio-optimized.vercel.app/` se actualiza automáticamente con cada `git push`. Se usa como espejo porque el subdominio `.pages.dev` de Cloudflare puede ser catalogado como sospechoso en LinkedIn.
+- **⚠️ BUG CRÍTICO RESUELTO:** El archivo `client/public/_redirects` tenía un redirect `/* https://fintech-portfolio-optimized.vercel.app/:splat 301` que enviaba TODO el tráfico de Cloudflare Pages a Vercel. NUNCA agregar redirects 301 a dominios externos en ese archivo. El archivo correcto debe contener solo `/* /index.html 200` (SPA fallback).
+- **NO subir archivos manualmente** a Cloudflare Pages. El pipeline de git es el único canal de deploy.
 
 ## Redacción del CV Tradicional (Viñetas de Clip)
 Cuando se actualice el CV tradicional en PDF/Word o se redacten cartas de presentación, usar exactamente esta estructura para la experiencia en Clip:
