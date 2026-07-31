@@ -188,6 +188,7 @@ export default function Home() {
               </defs>
             </svg>
             <span className="font-bold text-lg text-gradient">Fintech Pro</span>
+            <span className="text-[9px] font-mono bg-secondary/20 text-secondary px-1.5 py-0.5 rounded ml-1">v2.0-EN/ES</span>
           </div>
           <div className="hidden md:flex gap-8">
             <a href="#contacto" className="text-sm hover:text-secondary transition-colors">
