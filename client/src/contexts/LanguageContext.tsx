@@ -138,6 +138,14 @@ export const translations: Record<Language, Record<string, string>> = {
     'fiserv.desc': 'Retención de portafolio, reactivación automatizada y dashboards comerciales para adquirencia a gran escala.',
     'fiserv.merchants': 'Merchants',
     'fiserv.opp': 'Opp/Mes',
+    'fiserv.f1.title': 'POWER BI DIAGNOSTIC',
+    'fiserv.f1.desc': 'Modelo MoM de comportamiento transaccional para 80+ merchants asignados.',
+    'fiserv.f2.title': 'SALES AUTOMATION',
+    'fiserv.f2.desc': 'Workflow Power Automate + Excel + Outlook para campañas de reactivación.',
+    'fiserv.f3.title': 'SALESFORCE REPORTING',
+    'fiserv.f3.desc': 'Dashboards custom de pipeline health, conversión y KPIs MoM.',
+    'fiserv.f4.title': 'PARTNERSHIP PIPELINE',
+    'fiserv.f4.desc': '+15 oportunidades enterprise mensuales desde alianza bancaria asignada.',
 
     // Clip
     'clip.role': 'Asesor Comercial',
@@ -145,11 +153,23 @@ export const translations: Record<Language, Record<string, string>> = {
     'clip.tpv': 'TPV Procesado',
     'clip.deals': 'Deals Activos',
     'clip.viewPhoto': 'Ver foto',
+    'clip.f1.title': 'OUTBOUND HUNTER',
+    'clip.f1.desc': 'Cerró 15 tratos auto-generados que aportaron $52M MXN (75.3% del volumen total de la cartera de $69M MXN).',
+    'clip.f2.title': 'API & ISV INTEGRATIONS',
+    'clip.f2.desc': 'Bistrosoft (restaurantes), Profitroom (hospitalidad), Odoo ERP.',
+    'clip.f3.title': 'TECH PROSPECTING',
+    'clip.f3.desc': 'Sales Navigator, Apollo, scraping workflows para calificación de decisores.',
+    'clip.f4.title': 'TOP PERFORMER & CUOTAS',
+    'clip.f4.desc': 'Reconocido en el podio nacional de Top Performers de Clip (3er lugar general) tras alcanzar el 109% de cumplimiento de cuota de TPV.',
 
     // JTI
     'jti.desc': 'Expansión territorial, cuentas clave y crecimiento de share.',
     'jti.active': 'Base Activa',
     'jti.hotels': 'Hoteles',
+    'jti.f1.title': 'KEY ACCOUNT MANAGEMENT',
+    'jti.f1.desc': 'Gestión comercial de cadenas hoteleras clave y canal HORECA.',
+    'jti.f2.title': 'TERRITORIAL EXPANSION',
+    'jti.f2.desc': 'Desarrollo de territorio en Aguascalientes y Cancún con incremento de cuota de mercado.',
 
     // LATAM Community
     'latam.role': 'Co-Founder',
@@ -157,6 +177,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'latam.professionals': 'Profesionales',
     'latam.coverage': 'Cobertura',
     'latam.community': 'Comunidad',
+    'latam.f1.title': 'COBERTURA LATAM',
+    'latam.f1.desc': 'Miembros de MX, CO, PE, BR y más mercados de la región.',
+    'latam.f2.title': 'NETWORKING & EVENTOS',
+    'latam.f2.desc': 'Encuentros ejecutivos y canales de mensajería directa entre líderes del sector.',
 
     // Project cards
     'project.nerv.status': 'MVP • EN DESARROLLO',
@@ -294,6 +318,14 @@ export const translations: Record<Language, Record<string, string>> = {
     'fiserv.desc': 'Portfolio retention, automated reactivation, and commercial dashboards for large-scale merchant acquiring.',
     'fiserv.merchants': 'Merchants',
     'fiserv.opp': 'Opp/Month',
+    'fiserv.f1.title': 'POWER BI DIAGNOSTICS',
+    'fiserv.f1.desc': 'MoM transactional behavior model for 80+ assigned merchants.',
+    'fiserv.f2.title': 'SALES AUTOMATION',
+    'fiserv.f2.desc': 'Power Automate + Excel + Outlook workflow for reactivation campaigns.',
+    'fiserv.f3.title': 'SALESFORCE REPORTING',
+    'fiserv.f3.desc': 'Custom pipeline health, conversion, and MoM KPI dashboards.',
+    'fiserv.f4.title': 'PARTNERSHIP PIPELINE',
+    'fiserv.f4.desc': '+15 monthly enterprise opportunities from assigned banking alliance.',
 
     // Clip
     'clip.role': 'Commercial Executive',
@@ -301,11 +333,23 @@ export const translations: Record<Language, Record<string, string>> = {
     'clip.tpv': 'Processed TPV',
     'clip.deals': 'Active Deals',
     'clip.viewPhoto': 'View photo',
+    'clip.f1.title': 'OUTBOUND HUNTER',
+    'clip.f1.desc': 'Closed 15 self-generated deals contributing $52M MXN (75.3% of total $69M MXN portfolio volume).',
+    'clip.f2.title': 'API & ISV INTEGRATIONS',
+    'clip.f2.desc': 'Bistrosoft (restaurants), Profitroom (hospitality), Odoo ERP integrations.',
+    'clip.f3.title': 'TECH PROSPECTING',
+    'clip.f3.desc': 'Sales Navigator, Apollo, scraping workflows for decision-maker qualification.',
+    'clip.f4.title': 'TOP PERFORMER & TARGETS',
+    'clip.f4.desc': 'Recognized on Clip National Podium (3rd place overall) achieving 109% TPV quota compliance.',
 
     // JTI
     'jti.desc': 'Territorial expansion, key accounts, and market share growth.',
     'jti.active': 'Active Base',
     'jti.hotels': 'Hotels',
+    'jti.f1.title': 'KEY ACCOUNT MANAGEMENT',
+    'jti.f1.desc': 'Commercial management of key hotel chains and HORECA channel.',
+    'jti.f2.title': 'TERRITORIAL EXPANSION',
+    'jti.f2.desc': 'Territory development in Aguascalientes and Cancun with market share growth.',
 
     // LATAM Community
     'latam.role': 'Co-Founder',
@@ -313,6 +357,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'latam.professionals': 'Professionals',
     'latam.coverage': 'Coverage',
     'latam.community': 'Community',
+    'latam.f1.title': 'LATAM COVERAGE',
+    'latam.f1.desc': 'Members across MX, CO, PE, BR and top regional payment markets.',
+    'latam.f2.title': 'NETWORKING & EVENTS',
+    'latam.f2.desc': 'Executive meetups and direct messaging channels among industry leaders.',
 
     // Project cards
     'project.nerv.status': 'MVP • IN DEVELOPMENT',

@@ -488,10 +488,10 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
-                    { icon: '📈', title: 'POWER BI DIAGNOSTIC', desc: 'Modelo MoM de comportamiento transaccional para 80+ merchants asignados' },
-                    { icon: '🗂️', title: 'SALES AUTOMATION', desc: 'Workflow Power Automate + Excel + Outlook para campañas de reactivación' },
-                    { icon: '🎯', title: 'SALESFORCE REPORTING', desc: 'Dashboards custom de pipeline health, conversión y KPIs MoM' },
-                    { icon: '🤝', title: 'PARTNERSHIP PIPELINE', desc: '+15 oportunidades enterprise mensuales desde alianza bancaria asignada' },
+                    { icon: '📈', title: t('fiserv.f1.title'), desc: t('fiserv.f1.desc') },
+                    { icon: '🗂️', title: t('fiserv.f2.title'), desc: t('fiserv.f2.desc') },
+                    { icon: '🎯', title: t('fiserv.f3.title'), desc: t('fiserv.f3.desc') },
+                    { icon: '🤝', title: t('fiserv.f4.title'), desc: t('fiserv.f4.desc') },
                   ].map((f, i) => (
                     <div key={i} className="flex gap-3 p-3 bg-muted/30 rounded-lg border border-border/30">
                       <span className="text-lg shrink-0">{f.icon}</span>
@@ -541,10 +541,10 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
-                    { icon: '🎯', title: 'OUTBOUND HUNTER', desc: 'Cerró 15 tratos auto-generados que aportaron $52M MXN (75.3% del volumen total de la cartera de $69M MXN).' },
-                    { icon: '🔌', title: 'API & ISV INTEGRATIONS', desc: 'Bistrosoft (restaurantes), Profitroom (hospitalidad), Odoo ERP' },
-                    { icon: '⚡', title: 'TECH PROSPECTING', desc: 'Sales Navigator, Apollo, scraping workflows para calificación de decisores' },
-                    { icon: '🏆', title: 'TOP PERFORMER & CUOTAS', desc: 'Reconocido en el podio nacional de Top Performers de Clip (3er lugar general) tras alcanzar el 109% de cumplimiento de cuota de TPV.' },
+                    { icon: '🎯', title: t('clip.f1.title'), desc: t('clip.f1.desc') },
+                    { icon: '🔌', title: t('clip.f2.title'), desc: t('clip.f2.desc') },
+                    { icon: '⚡', title: t('clip.f3.title'), desc: t('clip.f3.desc') },
+                    { icon: '🏆', title: t('clip.f4.title'), desc: t('clip.f4.desc') },
                   ].map((f, i) => (
                     <div key={i} className="flex gap-3 p-3 bg-muted/30 rounded-lg border border-border/30">
                       <span className="text-lg shrink-0">{f.icon}</span>
@@ -609,10 +609,8 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
-                    { icon: '⭐', title: 'SHARE OF OPPORTUNITY', desc: '+40% SO en Cancún y Riviera Maya vs año anterior' },
-                    { icon: '🌐', title: 'EXPANSIÓN DE CARTERA', desc: '+35% clientes activos en boutiques de hotel y grupos turísticos (+100 hoteles)' },
-                    { icon: '🤝', title: 'KAM ESTRATÉGICO', desc: 'Grupo Xcaret, Grupo Mera, Fiesta Americana, RIU, Bahía Principe' },
-                    { icon: '🎯', title: 'LIDERAZGO DE EQUIPO', desc: 'Coordinación de equipo de 3 personas FSF en región Bajío' },
+                    { icon: '⭐', title: t('jti.f1.title'), desc: t('jti.f1.desc') },
+                    { icon: '🗺️', title: t('jti.f2.title'), desc: t('jti.f2.desc') },
                   ].map((f, i) => (
                     <div key={i} className="flex gap-3 p-3 bg-muted/30 rounded-lg border border-border/30">
                       <span className="text-lg shrink-0">{f.icon}</span>
@@ -636,7 +634,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-6 pt-5 pb-3 border-b border-border/50">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-blue-500 flex items-center justify-center shadow shrink-0">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeWidth="2" d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4" strokeWidth="2"/><path strokeWidth="2" d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeWidth="2" d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4" strokeWidth="2"/><path strokeWidth="2" d="M23 21v-2a4 4 0 0 1 0 7.75"/></svg>
                   </div>
                   <div>
                     <div className="text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">COMUNIDAD ACTIVA · LATAM · Fintech · Acquiring</div>
@@ -662,10 +660,8 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
-                    { icon: '👥', title: 'RED REGIONAL', desc: '500+ profesionales de pagos y eCommerce en LinkedIn y WhatsApp' },
-                    { icon: '🌐', title: 'COBERTURA LATAM', desc: 'Miembros de MX, CO, PE, BR y más mercados de la región' },
-                    { icon: '⚡', title: 'CURADURÍA SECTORIAL', desc: 'Best practices en acquiring, procesamiento digital y seguridad en eCommerce' },
-                    { icon: '🤝', title: 'CONEXIÓN DE ECOSISTEMA', desc: 'Puente entre fintechs, ISOs, PSPs y ejecutivos comerciales de la región' },
+                    { icon: '🌐', title: t('latam.f1.title'), desc: t('latam.f1.desc') },
+                    { icon: '🤝', title: t('latam.f2.title'), desc: t('latam.f2.desc') },
                   ].map((f, i) => (
                     <div key={i} className="flex gap-3 p-3 bg-muted/30 rounded-lg border border-border/30">
                       <span className="text-lg shrink-0">{f.icon}</span>
@@ -677,7 +673,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  {['/evento.jpg', '/latam.jpeg'].map((src, i) => (
+                  {['./evento.jpg', './latam.jpeg'].map((src, i) => (
                     <div
                       key={i}
                       className="h-44 rounded-xl overflow-hidden border border-border/50 shadow-sm shrink-0 cursor-zoom-in group relative"
@@ -1088,7 +1084,7 @@ export default function Home() {
                     <div className="flex flex-col items-center gap-3">
                       <div className="w-20 h-10 rounded-lg shadow-lg border border-indigo-500/20 bg-indigo-950 flex items-center justify-center overflow-hidden">
                         <img
-                          src="/latamcommerce-logo.png"
+                          src="./latamcommerce-logo.png"
                           alt="LATAMcommerce"
                           className="w-full h-full object-contain"
                           onError={(e) => {
