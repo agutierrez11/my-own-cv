@@ -174,36 +174,35 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80 shadow-2xl shadow-slate-950/50">
         <div className="container flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="6" width="28" height="20" rx="4" fill="url(#logoGrad)" stroke="#3b82f6" strokeWidth="1.5" />
+              <rect x="2" y="6" width="28" height="20" rx="6" fill="url(#logoGrad)" stroke="#38bdf8" strokeWidth="1.5" />
               <path d="M12 16H20M20 16L17 13M20 16L17 19" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               <defs>
                 <linearGradient id="logoGrad" x1="2" y1="6" x2="30" y2="26" gradientUnits="userSpaceOnUse">
                   <stop stopColor="#0f172a" />
-                  <stop offset="1" stopColor="#06b6d4" stopOpacity="0.8" />
+                  <stop offset="1" stopColor="#06b6d4" stopOpacity="0.9" />
                 </linearGradient>
               </defs>
             </svg>
-            <span className="font-bold text-lg text-gradient">Fintech Pro</span>
-            <span className="text-[9px] font-mono bg-secondary/20 text-secondary px-1.5 py-0.5 rounded ml-1">v2.0-EN/ES</span>
+            <span className="font-bold text-xl tracking-tight text-gradient">Fintech Pro</span>
           </div>
           <div className="hidden md:flex gap-8">
-            <a href="#contacto" className="text-sm hover:text-secondary transition-colors">
+            <a href="#contacto" className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">
               {t('footer.nav.contact')}
             </a>
-            <a href="#trayectoria" className="text-sm hover:text-secondary transition-colors">
+            <a href="#trayectoria" className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">
               {t('footer.nav.experience')}
             </a>
-            <a href="#red-activa" className="text-sm hover:text-secondary transition-colors">
+            <a href="#red-activa" className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">
               {t('footer.nav.network')}
             </a>
-            <a href="#proyectos" className="text-sm hover:text-secondary transition-colors">
+            <a href="#proyectos" className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">
               {t('footer.nav.projects')}
             </a>
-            <a href="#certificaciones" className="text-sm hover:text-secondary transition-colors">
+            <a href="#certificaciones" className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">
               {t('section.certs.label')}
             </a>
           </div>
@@ -211,10 +210,10 @@ export default function Home() {
             {/* Language Selector */}
             <button
               onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
-              className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-slate-300 dark:border-slate-700 bg-slate-100/80 dark:bg-slate-900/80 text-xs font-mono font-semibold text-foreground hover:border-secondary transition-all"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-700/80 bg-slate-900/90 text-xs font-mono font-semibold text-slate-200 hover:border-cyan-400 hover:text-cyan-300 transition-all shadow-sm"
               title="Cambiar idioma / Change language"
             >
-              <Globe className="w-3.5 h-3.5 text-secondary" />
+              <Globe className="w-3.5 h-3.5 text-cyan-400" />
               <span>{language.toUpperCase()}</span>
             </button>
 
@@ -223,10 +222,10 @@ export default function Home() {
                 variant="ghost"
                 size="icon"
                 onClick={toggleTheme}
-                className="text-foreground hover:bg-muted"
+                className="text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-full"
                 aria-label="Toggle theme"
               >
-                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {theme === 'dark' ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-cyan-400" />}
               </Button>
             )}
           </div>
@@ -234,17 +233,17 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-20 pb-12 flex items-center overflow-hidden">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
-
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-slate-950">
+        {/* Background Radial Glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(14,165,233,0.15),rgba(255,255,255,0))]" />
+        
         {/* Animated background elements with aggressive scroll parallax */}
         <div 
-          className="absolute top-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"
+          className="absolute top-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
           style={{ transform: `translate3d(0, ${scrollY * -0.4}px, 0)` }}
         />
         <div 
-          className="absolute bottom-20 left-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl"
+          className="absolute bottom-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"
           style={{ transform: `translate3d(0, ${scrollY * 0.25}px, 0)` }}
         />
 
@@ -254,43 +253,44 @@ export default function Home() {
         <div className="container relative z-10 grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Text */}
           <div className="animate-slide-in-left">
-            <div className="label-sm text-secondary mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-md shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               {t('hero.tagline')}
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-[1.08] tracking-tight">
               {t('hero.title1')}
               <br />
               <span className="text-gradient"> {t('hero.title2')}</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-lg">
+            <p className="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed max-w-xl">
               {t('hero.subtitle')}
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mb-8" data-clarity-unmask="true">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-8 p-4 sm:p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md shadow-xl">
               <div>
-                <div className="text-3xl font-bold text-gradient">Top 12%</div>
-                <div className="text-xs text-muted-foreground label-sm">{t('hero.statRank')}</div>
+                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-cyan-400">Top 12%</div>
+                <div className="text-[11px] text-slate-400 label-sm mt-1">{t('hero.statRank')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gradient">$555k</div>
-                <div className="text-xs text-muted-foreground label-sm">{t('hero.statDeal')}</div>
+                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-emerald-400">$555k</div>
+                <div className="text-[11px] text-slate-400 label-sm mt-1">{t('hero.statDeal')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gradient">+280%</div>
-                <div className="text-xs text-muted-foreground label-sm">{t('hero.statQuota')}</div>
+                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-amber-400">+280%</div>
+                <div className="text-[11px] text-slate-400 label-sm mt-1">{t('hero.statQuota')}</div>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
               <a href="#contacto">
-                <Button className="bg-gradient-to-r from-secondary to-accent hover:opacity-90 text-white px-8">
+                <Button className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 text-slate-950 font-bold px-8 py-3.5 text-base rounded-xl shadow-lg shadow-emerald-500/20 hover:scale-[1.02] transition-all">
                   {t('hero.ctaSecondary')} <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </a>
               <a href="#trayectoria">
-                <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary/10">
+                <Button variant="outline" className="border border-slate-700/80 bg-slate-900/60 text-slate-200 hover:bg-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 px-7 py-3.5 text-base rounded-xl transition-all">
                   {t('hero.ctaPrimary')}
                 </Button>
               </a>

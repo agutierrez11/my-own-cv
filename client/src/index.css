@@ -118,7 +118,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', 'Inter', sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -134,9 +134,9 @@
 
   /* Typography System */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
   }
 
   h1 {
@@ -203,6 +203,32 @@
   }
 
   /* Fintech Premium Components */
+  .glass-card {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(30, 41, 59, 0.75);
+    border-color: rgba(56, 189, 248, 0.3);
+    box-shadow: 0 12px 35px -10px rgba(14, 165, 233, 0.15);
+    transform: translateY(-4px);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.35);
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.35);
+  }
+
   .card-3d {
     @apply transition-all duration-300 ease-out;
     perspective: 1000px;
@@ -252,22 +278,27 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, oklch(0.35 0.12 260), oklch(0.65 0.15 140));
+    background-image: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
   }
 
   .text-gradient-warm {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, oklch(0.65 0.15 140), oklch(0.65 0.20 30));
+    background-image: linear-gradient(135deg, #34d399 0%, #fb923c 100%);
+  }
+
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #a855f7 0%, #38bdf8 100%);
   }
 }
 
 /* High-contrast dark theme text gradient overrides */
 .dark .text-gradient {
-  background-image: linear-gradient(135deg, oklch(0.75 0.15 260), oklch(0.85 0.12 140)) !important;
+  background-image: linear-gradient(135deg, #38bdf8 0%, #34d399 100%) !important;
 }
 
 .dark .text-gradient-warm {
-  background-image: linear-gradient(135deg, oklch(0.85 0.12 140), oklch(0.85 0.15 30)) !important;
+  background-image: linear-gradient(135deg, #34d399 0%, #fb923c 100%) !important;
 }
 
 
