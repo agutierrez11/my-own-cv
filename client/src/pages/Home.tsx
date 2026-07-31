@@ -297,37 +297,72 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: 3D Card with Name Overlay */}
-          <div className="animate-slide-in-right hidden md:flex justify-center w-full max-w-sm">
+          {/* Right: Interactive 3D Executive Fintech Hub */}
+          <div className="animate-slide-in-right hidden md:flex justify-center w-full max-w-md">
             <Card3D className="w-full relative">
-              <div className="w-full h-64 rounded-2xl bg-gradient-to-br from-indigo-950 via-slate-900 to-blue-950 p-6 flex flex-col justify-between border border-blue-500/30 relative overflow-hidden shadow-2xl">
-                {/* Card Glow Effect */}
-                <div className="absolute -right-10 -top-10 w-40 h-40 bg-blue-500/20 rounded-full blur-2xl" />
-                <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-indigo-500/20 rounded-full blur-2xl" />
-                <div className="flex justify-between items-start z-10">
-                  <div className="text-xs font-mono tracking-widest text-blue-400 font-bold">FINTECH PRO</div>
-                  <div className="w-8 h-8 rounded-full border border-white/20 bg-white/5 flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">AG</span>
+              <div className="w-full rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 p-6 flex flex-col justify-between border border-cyan-500/40 relative overflow-hidden shadow-2xl backdrop-blur-2xl">
+                {/* Background Ambient Glows */}
+                <div className="absolute -right-12 -top-12 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl" />
+                <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-emerald-500/20 rounded-full blur-3xl" />
+                <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
+
+                {/* Header Ticker */}
+                <div className="flex justify-between items-center z-10 pb-4 border-b border-white/10">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse badge-glow" />
+                    <span className="text-xs font-mono tracking-widest text-cyan-300 font-bold">FINTECH EXECUTION HUB</span>
                   </div>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">ONLINE</span>
                 </div>
-                <div className="my-6 z-10">
-                  <div className="w-12 h-9 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg relative overflow-hidden shadow">
-                    <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-[1px] p-1 opacity-40">
-                      {Array.from({ length: 9 }).map((_, i) => (
-                        <div key={i} className="border border-white/40 rounded-[1px]" />
-                      ))}
+
+                {/* Card Main Specs */}
+                <div className="my-5 z-10 space-y-4">
+                  <div className="flex items-center justify-between">
+                    {/* Metallic Chip */}
+                    <div className="w-12 h-9 bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 rounded-md relative overflow-hidden shadow-md border border-yellow-300/40">
+                      <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-[1px] p-1 opacity-50">
+                        {Array.from({ length: 9 }).map((_, i) => (
+                          <div key={i} className="border border-black/30 rounded-[1px]" />
+                        ))}
+                      </div>
+                    </div>
+                    {/* Contactless Icon */}
+                    <div className="text-cyan-400/80">
+                      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M8.5 14.5A5 5 0 0012 16a5 5 0 003.5-1.5M6 12a8 8 0 0112 0M3.5 9.5a11.5 11.5 0 0117 0"/></svg>
+                    </div>
+                  </div>
+
+                  {/* Account Name & TPV Stats */}
+                  <div>
+                    <div className="text-[10px] font-mono text-cyan-300/70 uppercase tracking-wider mb-0.5">ACQUIRING & ENTERPRISE LEAD</div>
+                    <div className="text-lg font-bold text-white tracking-wide">Antonio Gutiérrez Jiménez</div>
+                  </div>
+
+                  {/* Live Transaction Badge */}
+                  <div className="bg-slate-900/90 rounded-xl p-3 border border-white/10 flex items-center justify-between">
+                    <div>
+                      <div className="text-[9px] font-mono text-slate-400 uppercase">AVG DEAL TPV</div>
+                      <div className="text-base font-bold font-mono text-emerald-400">$555,000 MXN</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-[9px] font-mono text-slate-400 uppercase">QUOTA ACCURACY</div>
+                      <div className="text-base font-bold font-mono text-amber-400">109% PODIUM</div>
                     </div>
                   </div>
                 </div>
-                <div className="z-10 flex justify-between items-end">
-                  <div>
-                    <div className="text-[10px] text-muted-foreground tracking-wider uppercase font-semibold">Titular</div>
-                    <div className="text-sm font-semibold tracking-wider text-white">Antonio Gutiérrez Jiménez</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-[10px] text-muted-foreground tracking-wider uppercase font-semibold">Core</div>
-                    <div className="text-xs font-bold text-blue-400">GROWTH</div>
-                  </div>
+
+                {/* Interactive Action Button */}
+                <div className="z-10 pt-2 flex items-center justify-between">
+                  <button 
+                    onClick={() => {
+                      setPosStatus('processing');
+                      setTimeout(() => setPosStatus('success'), 2000);
+                    }}
+                    className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 hover:scale-[1.02] transition-all"
+                  >
+                    <Zap className="w-3.5 h-3.5 fill-slate-950" />
+                    <span>{posStatus === 'processing' ? 'Procesando TPV...' : posStatus === 'success' ? '✓ Transacción Aprobada' : 'Simular Proceso POS ($555k)'}</span>
+                  </button>
                 </div>
               </div>
             </Card3D>
