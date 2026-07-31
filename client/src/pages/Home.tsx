@@ -174,7 +174,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80 shadow-2xl shadow-slate-950/50">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border shadow-md transition-colors">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2.5">
             <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -190,19 +190,19 @@ export default function Home() {
             <span className="font-bold text-xl tracking-tight text-gradient">Fintech Pro</span>
           </div>
           <div className="hidden md:flex gap-8">
-            <a href="#contacto" className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">
+            <a href="#contacto" className="text-sm font-medium text-muted-foreground hover:text-secondary transition-colors">
               {t('footer.nav.contact')}
             </a>
-            <a href="#trayectoria" className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">
+            <a href="#trayectoria" className="text-sm font-medium text-muted-foreground hover:text-secondary transition-colors">
               {t('footer.nav.experience')}
             </a>
-            <a href="#red-activa" className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">
+            <a href="#red-activa" className="text-sm font-medium text-muted-foreground hover:text-secondary transition-colors">
               {t('footer.nav.network')}
             </a>
-            <a href="#proyectos" className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">
+            <a href="#proyectos" className="text-sm font-medium text-muted-foreground hover:text-secondary transition-colors">
               {t('footer.nav.projects')}
             </a>
-            <a href="#certificaciones" className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">
+            <a href="#certificaciones" className="text-sm font-medium text-muted-foreground hover:text-secondary transition-colors">
               {t('section.certs.label')}
             </a>
           </div>
@@ -210,10 +210,10 @@ export default function Home() {
             {/* Language Selector */}
             <button
               onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-700/80 bg-slate-900/90 text-xs font-mono font-semibold text-slate-200 hover:border-cyan-400 hover:text-cyan-300 transition-all shadow-sm"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-border bg-card text-xs font-mono font-semibold text-foreground hover:border-secondary transition-all shadow-sm"
               title="Cambiar idioma / Change language"
             >
-              <Globe className="w-3.5 h-3.5 text-cyan-400" />
+              <Globe className="w-3.5 h-3.5 text-secondary" />
               <span>{language.toUpperCase()}</span>
             </button>
 
@@ -222,10 +222,10 @@ export default function Home() {
                 variant="ghost"
                 size="icon"
                 onClick={toggleTheme}
-                className="text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-full"
+                className="text-foreground hover:bg-muted rounded-full"
                 aria-label="Toggle theme"
               >
-                {theme === 'dark' ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-cyan-400" />}
+                {theme === 'dark' ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-cyan-600" />}
               </Button>
             )}
           </div>
@@ -233,17 +233,17 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-slate-950">
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-background text-foreground transition-colors">
         {/* Background Radial Glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(14,165,233,0.15),rgba(255,255,255,0))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(14,165,233,0.12),rgba(255,255,255,0))]" />
         
         {/* Animated background elements with aggressive scroll parallax */}
         <div 
-          className="absolute top-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
+          className="absolute top-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"
           style={{ transform: `translate3d(0, ${scrollY * -0.4}px, 0)` }}
         />
         <div 
-          className="absolute bottom-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"
+          className="absolute bottom-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl"
           style={{ transform: `translate3d(0, ${scrollY * 0.25}px, 0)` }}
         />
 
@@ -253,44 +253,44 @@ export default function Home() {
         <div className="container relative z-10 grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Text */}
           <div className="animate-slide-in-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-md shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-md shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
               {t('hero.tagline')}
             </div>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-[1.08] tracking-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-[1.08] tracking-tight text-foreground">
               {t('hero.title1')}
               <br />
               <span className="text-gradient"> {t('hero.title2')}</span>
             </h1>
-            <p className="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed max-w-xl">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl font-normal">
               {t('hero.subtitle')}
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-8 p-4 sm:p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md shadow-xl">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-8 p-4 sm:p-5 rounded-2xl bg-card border border-border backdrop-blur-md shadow-xl">
               <div>
-                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-cyan-400">Top 12%</div>
-                <div className="text-[11px] text-slate-400 label-sm mt-1">{t('hero.statRank')}</div>
+                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-secondary">Top 12%</div>
+                <div className="text-[11px] text-muted-foreground label-sm mt-1">{t('hero.statRank')}</div>
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-emerald-400">$555k</div>
-                <div className="text-[11px] text-slate-400 label-sm mt-1">{t('hero.statDeal')}</div>
+                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-secondary">$555k</div>
+                <div className="text-[11px] text-muted-foreground label-sm mt-1">{t('hero.statDeal')}</div>
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-amber-400">+280%</div>
-                <div className="text-[11px] text-slate-400 label-sm mt-1">{t('hero.statQuota')}</div>
+                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-amber-500">+280%</div>
+                <div className="text-[11px] text-muted-foreground label-sm mt-1">{t('hero.statQuota')}</div>
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <a href="#contacto">
-                <Button className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 text-slate-950 font-bold px-8 py-3.5 text-base rounded-xl shadow-lg shadow-emerald-500/20 hover:scale-[1.02] transition-all">
+                <Button className="bg-secondary text-white font-bold px-8 py-3.5 text-base rounded-xl shadow-lg hover:opacity-90 hover:scale-[1.02] transition-all">
                   {t('hero.ctaSecondary')} <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </a>
               <a href="#trayectoria">
-                <Button variant="outline" className="border border-slate-700/80 bg-slate-900/60 text-slate-200 hover:bg-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 px-7 py-3.5 text-base rounded-xl transition-all">
+                <Button variant="outline" className="border border-border bg-card text-foreground hover:bg-muted px-7 py-3.5 text-base rounded-xl transition-all">
                   {t('hero.ctaPrimary')}
                 </Button>
               </a>
@@ -351,7 +351,7 @@ export default function Home() {
           <div className="mb-8 text-center">
             {/* Profile photo - bigger */}
             <div className="w-44 h-44 rounded-full border-2 border-secondary/40 overflow-hidden shadow-xl mx-auto mb-4">
-              <img src="/foto_informal_jersey_2.jpg" alt="Antonio Gutiérrez" className="w-full h-full object-cover" />
+              <img src="./foto_informal_jersey_2.jpg" alt="Antonio Gutiérrez" className="w-full h-full object-cover" />
             </div>
             <div className="label-sm text-secondary mb-2">{t('contact.label')}</div>
             <h2 className="text-3xl md:text-4xl font-bold max-w-3xl mx-auto">
@@ -556,7 +556,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {['/oddo+clip.jpg', '/odoo.jpg', '/podium_clip.png'].map((src, i) => (
+                  {['./oddo+clip.jpg', './odoo.jpg', './podium_clip.png'].map((src, i) => (
                     <div
                       key={i}
                       className="h-44 rounded-xl overflow-hidden border border-border/50 shadow-sm shrink-0 cursor-zoom-in group relative"
